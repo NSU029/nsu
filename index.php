@@ -204,9 +204,9 @@
                                 <select id="transporte" name="transporte" required>
                                     <option value="">Selecione...</option>
                                     <option value="carro" <?= ($_POST['transporte'] ?? '') === 'carro' ? 'selected' : '' ?>>Carro</option>
-                                    <option value="moto" <?= ($_POST['transporte'] ?? '') === 'moto' ? 'selected' : '' ?>>Motocicleta</option>
+                                    <option value="moto" <?= ($_POST['transporte'] ?? '') === 'moto' ? 'selected' : '' ?>>Moto</option>
                                     <option value="publico" <?= ($_POST['transporte'] ?? '') === 'publico' ? 'selected' : '' ?>>Transporte Público</option>
-                                    <option value="bicicleta" <?= ($_POST['transporte'] ?? '') === 'bicicleta' ? 'selected' : '' ?>>Bicicleta/Caminhada</option>
+                                    <option value="bicicleta" <?= ($_POST['transporte'] ?? '') === 'bicicleta' ? 'selected' : '' ?>>Bicicleta / Caminhada</option>
                                 </select>
                             </div>
                         </div>
@@ -335,7 +335,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 EcoCalculadora. Todos os direitos reservados. | Juntos por um planeta mais sustentável! 🌍</p>
+            <p>&copy; 2025 EcoCalculadora. | Juntos por um planeta mais sustentável, pois chama-me meio-ambiente por algum motivo! 🌍</p>
         </div>
     </footer>
 </body>
