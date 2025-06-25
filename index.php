@@ -126,11 +126,15 @@
                             <p>Para combater as alterações climáticas, devemos reduzir para <strong>2,3 toneladas</strong> por pessoa</p>
                         </div>
                         
-                        <div class="stat-card">
-                            <span class="stat-icon">🇵🇹</span>
-                            <h3>Portugal</h3>
-                            <p>A pegada média em Portugal é de aproximadamente <strong>5,4 toneladas</strong> de CO2 por pessoa</p>
-                        </div>
+<div class="stat-card">
+  <span class="stat-icon">🇵🇹</span>
+  <h3>Portugal</h3>
+  <p>
+    A pegada média em <span class="country-flag">🇵🇹</span> é de aproximadamente
+    <strong>5,4 toneladas</strong> de CO₂ por pessoa
+  </p>
+</div>
+
                         
                         <div class="stat-card">
                             <span class="stat-icon">⚡</span>
