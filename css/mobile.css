@@ -1,453 +1,205 @@
-/* Tablets (768px e abaixo) */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  /* Navegação */
-  .nav-links {
-    display: none;
-  }
-
+@media (max-width: 1080px) {
   nav {
-    padding: 0.8rem 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
   }
-
   .logo {
-    font-size: 1.5rem;
-  }
-
-  .logo::before {
-    font-size: 1.7rem;
-  }
-
-  /* Hero section */
-  .hero {
-    padding: 3rem 0;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Seções */
-  .section {
-    margin: 1.5rem 0;
-    padding: 2rem 0;
-  }
-
-  .section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Conteúdo intro */
-  .intro-content {
-    padding: 1.5rem 0;
-  }
-
-  .intro-section {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-  }
-
-  .intro-section h2 {
-    font-size: 1.7rem;
-  }
-
-  .intro-section p {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  /* Grid de estatísticas */
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  .stat-card {
-    padding: 1.2rem;
-  }
-
-  .stat-icon {
-    font-size: 2rem;
-  }
-
-  .stat-card h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Grid de importância */
-  .importance-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .importance-icon {
-    font-size: 1.7rem;
-  }
-
-  /* Botão CTA */
-  .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  /* Calculadora */
-  .calculator {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
-
-  .form-group input,
-  .form-group select {
-    padding: 0.7rem;
-  }
-
-  .calculate-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  /* Resultados */
-  .result {
-    padding: 1.5rem;
-  }
-
-  .result h3 {
-    font-size: 1.7rem;
-  }
-
-  .result .value {
-    font-size: 2.5rem;
-  }
-
-  .classification {
-    font-size: 1.1rem;
-    padding: 0.8rem;
-  }
-
-  /* Comparação */
-  .comparison {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .comparison-item {
-    padding: 0.8rem;
-  }
-
-  .comparison-item .icon {
-    font-size: 1.7rem;
-  }
-
-  /* Tips */
-  .tips {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .tip-card {
-    padding: 1.5rem;
-  }
-
-  .tip-card .icon {
-    font-size: 2.5rem;
-  }
-
-  .tip-card h3 {
-    font-size: 1.2rem;
-  }
-
-  /* Textos sobre e contactos */
-  .sobre-intro,
-  .contactos-intro {
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
-  }
-
-  /* Footer */
-  footer {
-    padding: 1.5rem 0;
-  }
-
-  /* Redes sociais */
-  ul.social {
-    gap: 8px;
-  }
-
-  ul.social img {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-/* Smartphones (480px e abaixo) */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 10px;
-  }
-
-  /* Logo */
-  .logo {
-    font-size: 1.3rem;
-  }
-
-  .logo::before {
-    font-size: 1.5rem;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 2rem 0;
-  }
-
-  .hero h1 {
-    font-size: 1.7rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Seções */
-  .section {
-    padding: 1.5rem 0;
-  }
-
-  .section h2 {
-    font-size: 1.7rem;
-  }
-
-  /* Intro sections */
-  .intro-section {
-    padding: 1.2rem;
-  }
-
-  .intro-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .intro-section p {
-    font-size: 0.95rem;
-  }
-
-  /* Stats cards */
-  .stat-card {
-    padding: 1rem;
-  }
-
-  .stat-icon {
-    font-size: 1.8rem;
-  }
-
-  .stat-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .stat-card p {
-    font-size: 0.9rem;
-  }
-
-  /* Importance items */
-  .importance-item h4 {
-    font-size: 1rem;
-  }
-
-  .importance-item p {
-    font-size: 0.85rem;
-  }
-
-  /* CTA Button */
-  .cta-button {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  /* Calculator */
-  .calculator {
-    padding: 1.2rem;
-  }
-
-  .calculator-intro {
-    margin-bottom: 1.5rem;
-  }
-
-  /* Form elements */
-  .form-group {
     margin-bottom: 1rem;
   }
-
-  .form-group input,
-  .form-group select {
-    padding: 0.6rem;
-    font-size: 0.95rem;
-  }
-
-  .calculate-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  /* Results */
-  .result {
-    padding: 1.2rem;
-  }
-
-  .result h3 {
-    font-size: 1.5rem;
-  }
-
-  .result .value {
-    font-size: 2.2rem;
-  }
-
-  .classification {
-    font-size: 1rem;
-    padding: 0.7rem;
-  }
-
-  /* Tips */
-  .tip-card {
-    padding: 1.2rem;
-  }
-
-  .tip-card .icon {
-    font-size: 2.2rem;
-  }
-
-  .tip-card h3 {
-    font-size: 1.1rem;
-  }
-
-  /* Progress bar */
-  .progress-container {
-    height: 18px;
-  }
-
-  .progress-bar {
-    font-size: 0.8rem;
-  }
-
-  /* Alerts */
-  .alert {
-    padding: 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  /* Social icons */
-  ul.social img {
-    width: 28px;
-    height: 28px;
+  .nav-links {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 }
 
-/* Smartphones muito pequenos (360px e abaixo) */
-@media (max-width: 360px) {
-  .container {
-    padding: 0 8px;
+/* telemoveis até 480px */
+@media (max-width: 480px) {
+  .container { padding: 0 8px; }
+  
+  nav { 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 1rem 0; 
   }
-
-  .hero h1 {
-    font-size: 1.5rem;
+  .nav-links { 
+    display: flex; 
+    width: 100%; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 0.9rem; 
+    font-size: 0.85rem; 
   }
-
-  .hero p {
-    font-size: 0.95rem;
+  .logo { font-size: 1.5rem; margin-bottom: 1rem; text-align: center;}
+  .logo::before { font-size: 1.5rem; }
+  
+  .introducao { padding: 2rem 0; }
+  .introducao h1 { font-size: 1.5rem; margin-bottom: 0.6rem; }
+  .introducao p { font-size: 0.95rem; margin-bottom: 1.2rem; }
+  
+  .section { margin: 1.5rem 0; padding: 1.5rem 0; }
+  .section h2 { font-size: 1.3rem; }
+  
+  .intro-section { padding: 1.2rem; margin: 1.5rem 0; }
+  .intro-section h2 { font-size: 1.1rem; }
+  .intro-section p { font-size: 0.9rem; line-height: 1.7; }
+  
+  .stats-grid, .importance-grid, .tips, .comparison { 
+    grid-template-columns: 1fr; gap: 1rem; 
   }
-
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .intro-section h2 {
-    font-size: 1.3rem;
-  }
-
-  .intro-section p {
-    font-size: 0.9rem;
-  }
-
-  .stat-card h3 {
-    font-size: 1rem;
-  }
-
-  .stat-card p {
-    font-size: 0.85rem;
-  }
-
-  .result .value {
-    font-size: 2rem;
-  }
-
-  .tip-card h3 {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
+  
+  .stat-card { padding: 1rem; }
+  .stat-icon { font-size: 1.8rem; }
+  .stat-card h3 { font-size: 1rem; }
+  .stat-card p { font-size: 0.85rem; }
+  
+  .cta-button { padding: 0.6rem 1rem; font-size: 0.9rem; }
+  
+  .calculator { padding: 1.2rem; margin: 1.5rem 0; }
+  .form-row { grid-template-columns: 1fr; gap: 0.8rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group input, .form-group select { padding: 0.6rem; font-size: 0.95rem; }
+  .calculate-btn { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+  
+  .result { padding: 1.2rem; }
+  .result h3 { font-size: 1.5rem; }
+  .result .value { font-size: 2rem; }
+  .classification { font-size: 1rem; padding: 0.7rem; }
+  
+  .tip-card { padding: 1.2rem; }
+  .tip-card .icon { font-size: 2.2rem; }
+  .tip-card h3 { font-size: 1rem; }
+  
+  .comparison-item { padding: 0.8rem; }
+  .comparison-item .icon { font-size: 1.7rem; }
+  
+  .sobre-intro, .contactos-intro { font-size: 0.9rem; line-height: 1.7; }
+  footer { font-size:0.8rem; padding: 1.5rem 0; }
+  ul.social { gap: 8px; }
+  ul.social img { width: 28px; height: 28px; }
 }
 
-/* Orientação landscape para dispositivos móveis */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hero {
-    padding: 2rem 0;
+/* telemoveis de 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container { padding: 0 10px; }
+  
+  nav { 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 1rem 0; 
   }
-
-  .hero h1 {
-    font-size: 1.8rem;
+  .nav-links { 
+    display: flex; 
+    width: 100%; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
   }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .logo { font-size: 1.4rem; margin-bottom: 1rem; }
+  .logo::before { font-size: 1.7rem; }
+  
+  .introducao { padding: 3rem 0; }
+  .introducao h1 { font-size: 1.7rem; margin-bottom: 0.8rem; }
+  .introducao p { font-size: 1rem; margin-bottom: 1.5rem; }
+  
+  .section { margin: 1.5rem 0; padding: 2rem 0; }
+  .section h2 { font-size: 1.7rem; margin-bottom: 1.5rem; }
+  
+  .intro-section { padding: 1.5rem; margin: 1.5rem 0; }
+  .intro-section h2 { font-size: 1.5rem; }
+  .intro-section p { font-size: 0.95rem; line-height: 1.7; }
+  
+  .stats-grid, .importance-grid, .tips, .comparison { 
+    grid-template-columns: 1fr; gap: 1rem; 
   }
-
-  .importance-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .comparison {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  
+  .stat-card { padding: 1.2rem; }
+  .stat-icon { font-size: 2rem; }
+  .stat-card h3 { font-size: 1.1rem; }
+  .stat-card p { font-size: 0.9rem; }
+  
+  .cta-button { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+  
+  .calculator { padding: 1.5rem; margin: 1.5rem 0; }
+  .form-row { grid-template-columns: 1fr; gap: 0.8rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group input, .form-group select { padding: 0.7rem; }
+  .calculate-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+  
+  .result { padding: 1.5rem; }
+  .result h3 { font-size: 1.7rem; }
+  .result .value { font-size: 2.2rem; }
+  .classification { font-size: 1.1rem; padding: 0.8rem; }
+  
+  .tip-card { padding: 1.5rem; }
+  .tip-card .icon { font-size: 2.5rem; }
+  .tip-card h3 { font-size: 1.1rem; }
+  
+  .comparison-item { padding: 0.8rem; }
+  .comparison-item .icon { font-size: 1.7rem; }
+  
+  .sobre-intro, .contactos-intro { font-size: 1rem; line-height: 1.7; }
+  footer { padding: 1.5rem 0; }
+  ul.social { gap: 8px; }
+  ul.social img { width: 32px; height: 32px; }
 }
 
-/* Melhorias de toque para dispositivos móveis */
-@media (max-width: 768px) {
-  .calculate-btn,
-  .cta-button {
-    min-height: 44px; /* Tamanho mínimo recomendado para toque */
+/* tablets de 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container { padding: 0 15px; }
+  
+  nav { flex-direction: column; align-items: center; padding: 1rem 0; }
+  .nav-links { 
+    display: flex; width: 100%; justify-content: center; 
+    flex-wrap: wrap; gap: 1.5rem; 
   }
-
-  .form-group input,
-  .form-group select {
-    min-height: 44px;
+  .logo { font-size: 1.4rem; margin-bottom: 1rem; }
+  .logo::before { font-size: 1.7rem; }
+  
+  .introducao { padding: 3rem 0; }
+  .introducao h1 { font-size: 2rem; margin-bottom: 0.8rem; }
+  .introducao p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+  
+  .section { margin: 1.5rem 0; padding: 2rem 0; }
+  .section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+  
+  .intro-section { padding: 1.5rem; margin: 1.5rem 0; }
+  .intro-section h2 { font-size: 1.7rem; }
+  .intro-section p { font-size: 1rem; line-height: 1.7; }
+  
+  .stats-grid, .importance-grid, .tips, .comparison { 
+    grid-template-columns: repeat(2, 1fr); gap: 1rem; 
   }
-
-  /* Melhor espaçamento entre elementos tocáveis */
-  .nav-links a {
-    padding: 0.5rem;
-  }
+  
+  .stat-card { padding: 1.2rem; }
+  .stat-icon { font-size: 2rem; }
+  .stat-card h3 { font-size: 1.2rem; }
+  
+  .cta-button { padding: 0.8rem 1.5rem; font-size: 1rem; }
+  
+  .calculator { padding: 1.5rem; margin: 1.5rem 0; }
+  .form-row { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group input, .form-group select { padding: 0.7rem; }
+  .calculate-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+  
+  .result { padding: 1.5rem; }
+  .result h3 { font-size: 1.7rem; }
+  .result .value { font-size: 2.5rem; }
+  .classification { font-size: 1.1rem; padding: 0.8rem; }
+  
+  .tip-card { padding: 1.5rem; }
+  .tip-card .icon { font-size: 2.5rem; }
+  .tip-card h3 { font-size: 1.2rem; }
+  
+  .comparison-item { padding: 0.8rem; }
+  .comparison-item .icon { font-size: 1.7rem; }
+  
+  .sobre-intro, .contactos-intro { font-size: 1rem; line-height: 1.7; }
+  footer { padding: 1.5rem 0; }
+  ul.social { gap: 8px; }
+  ul.social img { width: 32px; height: 32px; }
 }

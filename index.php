@@ -82,7 +82,7 @@ include 'cabecalho.php';
 ?>
 
 <main>
-    <section id="inicio" class="hero">
+    <section id="inicio" class="introducao">
         <div class="container">
             <h1>Bem-vindo à Calculadora da tua Pegada Ecológica</h1>
             <p>Uma ferramenta para avaliar e reduzir o teu impacto ambiental</p>
