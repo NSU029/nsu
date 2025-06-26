@@ -84,56 +84,57 @@ include 'cabecalho.php';
 <main>
     <section id="inicio" class="introducao">
         <div class="container">
-            <h1>Bem-vindo à Calculadora da tua Pegada Ecológica</h1>
-            <p>Uma ferramenta para avaliar e reduzir o teu impacto ambiental</p>
+            <h1>Bem-vindo à Calculadora Ambiental</h1>
+            <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
 
-            <a href="#calculadora" class="cta-button">Calcular a minha Pegada de Carbono</a>
+            <a href="#calculadora" class="cta-button">Calcular a minha Pegada</a>
 
             <div class="intro-content">
                 <div class="intro-section">
                     <h2>O que é a Pegada de Carbono?</h2>
-                    <p>A Pegada de Carbono representa a quantidade total de gases com efeito de estufa emitidos
-                        direta ou indiretamente pelas nossas atividades diárias. É medida em quilogramas de CO₂
-                        equivalente (CO₂e) e inclui emissões associadas à energia, transporte, alimentação e
-                        consumo.
+                    <p>A Pegada de Carbono representa a quantidade total de gases com efeito de estufa emitidos direta
+                        ou indiretamente pelas nossas atividades diárias. É medida em quilogramas de CO₂ equivalente
+                        (CO₂e) e inclui as emissões associadas à energia, aos transportes, à alimentação e ao consumo.
 
                         Esta pegada abrange:
 
-                        Emissões diretas: como a queima de combustíveis fósseis (ex: no carro ou no aquecimento de
-                        edifícios) e Emissões indiretas: como o uso de eletricidade gerada a partir de fontes não
-                        renováveis.
+                        Emissões diretas: como a queima de combustíveis fósseis (ex.: no carro ou no aquecimento de
+                        edifícios);
 
-                        Embora a unidade usada seja o CO₂, a pegada inclui também outros gases como o metano, o
-                        óxido nitroso e os CFCs, que têm elevado potencial de aquecimento global.
+                        Emissões indiretas: como o uso de eletricidade gerada a partir de fontes não renováveis.
 
-                        Uma pegada menor significa uma contribuição mais positiva para a desaceleração das
-                        alterações climáticas.
+                        Embora a unidade utilizada seja o CO₂, a pegada inclui também outros gases como o metano, o
+                        óxido nitroso e os CFCs, que têm um elevado potencial de aquecimento global.
+
+                        Uma pegada menor representa um contributo mais positivo para a desaceleração das alterações
+                        climáticas.
                     </p>
                 </div>
 
                 <div class="intro-section">
                     <h2>Métodos de cálculo</h2>
-                    <p> A Pegada de Carbono é estimada com base em dados como consumo de combustíveis fósseis,
-                        produção industrial, uso do solo e criação de animais, considerando também sumidouros de
-                        carbono (ex: árvores plantadas). Pode ser ajustada ao nível de detalhe necessário.
+                    <p> A Pegada de Carbono é estimada com base em dados como o consumo de combustíveis fósseis, a
+                        produção industrial, a utilização do solo e a criação de animais, considerando também os
+                        sumidouros de carbono (ex.: árvores plantadas). Pode ser ajustada ao nível de detalhe
+                        necessário.
                     </p>
                 </div>
 
                 <div class="intro-section">
                     <h2> Impacto Ambiental</h2>
-                    <p> O aumento de CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
-                        eventos climáticos extremos. Os acordos internacionais tentam limitar o aquecimento a
-                        1,5–2 °C para evitar consequências graves como derretimento polar, acidificação dos oceanos
-                        e crises alimentares.
+                    <p> O aumento do CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
+                        fenómenos climáticos extremos. Os acordos internacionais procuram limitar o aquecimento a
+                        1,5–2 °C para evitar consequências graves, como o derretimento dos polos, a acidificação dos
+                        oceanos e crises alimentares.
                     </p>
                 </div>
 
                 <div class="intro-section">
                     <h2> Setores com a maior Pegada</h2>
-                    <p> O setor energético é o maior emissor, seguido pela indústria, transportes e construção. O
-                        crescimento das energias renováveis ajuda a reduzir emissões. Alguns setores industriais,
-                        como aço e cimento, são mais difíceis de descarbonizar, mas o hidrogénio verde surge como
-                        alternativa.
+                    <p> O setor energético é o maior emissor, seguido pela indústria, pelos transportes e pela
+                        construção. O crescimento das energias renováveis contribui para a redução das emissões. Alguns
+                        setores industriais, como o do aço e o do cimento, são mais difíceis de descarbonizar, mas o
+                        hidrogénio verde surge como uma alternativa promissora.
                     </p>
                 </div>
             </div>
@@ -144,7 +145,7 @@ include 'cabecalho.php';
         <div class="container">
             <h2>Calculadora</h2>
             <p class="calculator-intro">
-                Preencha os campos seguintes com os seus dados mensais para calcular a tua Pegada de Carbono anual
+                Preenche os campos seguintes com os seus dados mensais para calcular a tua Pegada de Carbono anual
             </p>
 
             <div class="calculator">
@@ -253,7 +254,7 @@ include 'cabecalho.php';
 
     <section id="dicas" class="section">
         <div class="container">
-            <h2>Dicas para reduzir a tua Pegada de Carbono</h2>
+            <h2>Dicas para reduzires a tua Pegada de Carbono</h2>
             <div class="tips">
                 <div class="tip-card">
                     <span class="icon">💡</span>
