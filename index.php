@@ -23,13 +23,13 @@
         $distancia = floatval($_POST['distancia'] ?? 0);
         $pessoas = floatval($_POST['pessoas'] ?? 1);
 
-        // Fatores de emissão (kg CO2/unidade)
+        // Fatores de emissão (kg CO₂/unidade)
         $fatores = [
-            'energia' => 0.233, // kg CO2 por kWh
-            'gas' => 1.9, // kg CO2 por m³
-            'combustivel' => 2.3, // kg CO2 por litro
+            'energia' => 0.233, // kg CO₂ por kWh
+            'gas' => 1.9, // kg CO₂ por m³
+            'combustivel' => 2.3, // kg CO₂ por litro
             'transporte' => [
-                'carro' => 0.2, // kg CO2 por km
+                'carro' => 0.2, // kg CO₂ por km
                 'moto' => 0.1,
                 'publico' => 0.05,
                 'bicicleta' => 0
@@ -112,39 +112,106 @@
                 <div class="intro-content">
                     <div class="intro-section">
                         <h2>O que é a Pegada de Carbono?</h2>
-                        <p>A Pegada de Carbono é a quantidade total de gases de efeito estufa produzidos direta e
-                            indiretamente pelas tuas atividades diárias. É medida em quilogramas de dióxido de carbono
-                            equivalente (CO2e) e inclui emissões de energia, transporte, alimentação e consumo em geral.
+                        <p>A Pegada de Carbono representa a quantidade total de gases com efeito de estufa emitidos
+                            direta ou indiretamente pelas nossas atividades diárias. É medida em quilogramas de CO₂
+                            equivalente (CO₂e) e inclui emissões associadas à energia, transporte, alimentação e
+                            consumo.
+
+                            Esta pegada abrange:
+
+                            Emissões diretas: como a queima de combustíveis fósseis (ex: no carro ou no aquecimento de
+                            edifícios) e Emissões indiretas: como o uso de eletricidade gerada a partir de fontes não renováveis.
+
+                            Embora a unidade usada seja o CO₂, a pegada inclui também outros gases como o metano, o
+                            óxido nitroso e os CFCs, que têm elevado potencial de aquecimento global.
+
+                            Uma pegada menor significa uma contribuição mais positiva para a desaceleração das
+                            alterações climáticas.
                         </p>
                     </div>
 
                     <div class="intro-section">
-                        <h2>Porque é importante calcular?</h2>
-                        <div class="importance-grid">
-                            <div class="importance-item">
-                                <span class="importance-icon">🔍</span>
-                                <h3>Consciencialização</h3>
-                                <p>Compreender o seu impacto real no ambiente e identificar áreas de melhoria.</p>
-                            </div>
+                        <h2>Pegada de Carbono e Pegada Ecológica</h2>
+                        <p> Na literatura científica sobre sustentabilidade, o conceito de Pegada de Carbono foi
+                            precedido
+                            pelo de Pegada Ecológica, introduzido no início da década de 1990 pelos ecologistas William
+                            Rees
+                            e Mathis Wackernagel. Esse conceito está mais próximo do que entendemos na linguagem
+                            cotidiana
+                            como "pegada", ou seja, uma porção de terra na qual uma marca visível é impressa. A pegada
+                            ecológica é, na verdade, a área total de terra (ou mar) necessária para sustentar uma
+                            população
+                            e, portanto, seu cálculo também considera a água consumida e a terra usada para plantações e
+                            criação de animais.
 
-                            <div class="importance-item">
-                                <span class="importance-icon">📊</span>
-                                <h3>Monitorização</h3>
-                                <p>Acompanhar o progresso das tuas ações sustentáveis ao longo do tempo.</p>
-                            </div>
+                            Quando o aquecimento global e as emissões de CO₂ se tornaram o foco dos estudos de
+                            sustentabilidade ambiental, a medida da Pegada Ecológica caiu em desuso em comparação com a
+                            Pegada de Carbono, que se tornou uma ferramenta fundamental para monitorar a conformidade
+                            com os
+                            acordos internacionais de redução de emissões.
+                        </p>
+                    </div>
 
-                            <div class="importance-item">
-                                <span class="importance-icon">💡</span>
-                                <h3>Ação Direcionada</h3>
-                                <p>Concentrar os esforços nas atividades que mais contribuem para as tuas emissões.</p>
-                            </div>
+                    <div class="intro-section">
+                        <h2>Métodos de cálculo</h2>
+                        <p> Não existe um método único para calcular a Pegada de Carbono, pois envolve diversos factores
+                            e diferentes escalas. Normalmente, a pegada é estimada, com base em orientações
+                            internacionais, como as do IPCC (Painel Intergovernamental sobre Alterações Climáticas da
+                            ONU).
 
-                            <div class="importance-item">
-                                <span class="importance-icon">🌱</span>
-                                <h3>Futuro Sustentável</h3>
-                                <p>Contribuir ativamente para um planeta mais saudável para as próximas gerações.</p>
-                            </div>
-                        </div>
+                            Essas orientações utilizam indicadores estatísticos e económicos (ex.: consumo de
+                            combustíveis fósseis, produção industrial, uso do solo, número de animais criados) para
+                            calcular as emissões de gases com efeito de estufa, expressas em CO₂e (equivalente de
+                            dióxido de carbono).
+
+                            É igualmente importante considerar os sumidouros de carbono, como árvores plantadas, que
+                            reduzem o total de emissões.
+
+                            A Pegada de Carbono pode ser ajustada ao nível de detalhe necessário, devendo também ter em
+                            conta o impacto comparativo. Por exemplo, uma obra como uma ponte pode gerar emissões, mas
+                            reduzir outras no futuro, resultando numa pegada líquida menor ou até negativa.
+                        </p>
+                    </div>
+
+                    <div class="intro-section">
+                        <h2> O impacto da Pegada de Carbono no meio ambiente</h2>
+                        <p> O esforço para calcular e reduzir a Pegada de Carbono deve-se ao facto de que cada
+                            quilograma adicional de CO₂ na atmosfera agrava o efeito de estufa, retendo o calor solar e
+                            provocando o aumento das temperaturas médias globais.
+
+                            Segundo o IPCC, entre 2011 e 2020, a temperatura média da Terra foi 1,09 °C superior à da
+                            era pré-industrial, continuando a subir cerca de 0,2 °C por década. Este aquecimento já está
+                            a causar eventos climáticos extremos com mais frequência, como inundações, secas, ondas de
+                            calor e chuvas intensas.
+
+                            Os actuais compromissos internacionais procuram limitar o aquecimento global a entre 1,5 e
+                            2 °C. Ultrapassar esse limite pode provocar impactos irreversíveis, como o derretimento das
+                            calotes polares, acidificação dos oceanos, colapso dos recifes de corais, perda de
+                            biodiversidade marinha, recuo das geleiras e desertificação.
+
+                            As consequências para os seres humanos incluem crises alimentares, devido à quebra na
+                            produção de culturas como trigo, arroz e milho, e o aumento da propagação de doenças
+                            infecciosas, favorecidas por climas mais quentes.
+                        </p>
+                    </div>
+
+                    <div class="intro-section">
+                        <h2> Setores com a maior Pegada de Carbono</h2>
+                        <p> Num mundo ainda fortemente dependente de combustíveis fósseis, o sector da energia continua
+                            a ser o principal responsável pelas emissões de gases com efeito de estufa. Em 2022, segundo
+                            a Agência Internacional de Energia, a produção de energia emitiu cerca de 15 gigatoneladas
+                            de CO₂, seguida pela indústria (9 Gt), transportes (8 Gt) e construção (5 Gt).
+
+                            Apesar destes valores, há sinais positivos: o crescimento das energias renováveis evitou
+                            cerca de 600 megatoneladas de CO₂ entre 2021 e 2022. O mesmo se verifica nos transportes,
+                            com o aumento dos veículos eléctricos e a melhoria na eficiência dos carros a combustão.
+
+                            Na indústria, os sectores mais difíceis de descarbonizar – como a produção de aço, cimento e
+                            petroquímicos – representam cerca de 30% das emissões globais, devido à sua elevada
+                            necessidade energética. Nestes casos, soluções como o hidrogénio verde, produzido com
+                            energia renovável, podem ser uma alternativa viável aos combustíveis fósseis, especialmente
+                            em contextos industriais.
+                        </p>
                     </div>
                 </div>
 
@@ -155,7 +222,8 @@
         <section id="calculadora" class="section">
             <div class="container">
                 <h2>Calculadora da tua Pegada de Carbono</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: #666;">Preencha os campos seguintes com os seus
+                <p style="text-align: center; margin-bottom: 2rem; color: #666;">Preencha os campos seguintes com os
+                    seus
                     dados mensais para calcular a tua Pegada de Carbono anual</p>
 
                 <div class="calculator">
@@ -211,7 +279,7 @@
                     <?php if ($resultado): ?>
                         <div class="result">
                             <h3>A tua Pegada de Carbono</h3>
-                            <div class="value"><?= number_format($resultado['total'], 1) ?> kg CO2/ano</div>
+                            <div class="value"><?= number_format($resultado['total'], 1) ?> kg CO₂/ano</div>
 
                             <div class="progress-container">
                                 <div class="progress-bar <?= $resultado['progressClass'] ?>">
@@ -289,7 +357,8 @@
                     <div class="tip-card">
                         <span class="icon">🌱</span>
                         <h3>Consumo Consciente</h3>
-                        <p>Prefira produtos locais, reduza o consumo de carne, evite o desperdício de alimentos e escolha
+                        <p>Prefira produtos locais, reduza o consumo de carne, evite o desperdício de alimentos e
+                            escolha
                             produtos sustentáveis.</p>
                     </div>
 
@@ -314,10 +383,21 @@
             <div class="container">
                 <h2>Sobre a Pegada de Carbono</h2>
                 <p style="text-align: center; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-                    A Pegada de Carbono é a quantidade total de gases de efeito estufa produzidos direta e indiretamente
-                    pelas atividades humanas. É medida em toneladas de dióxido de carbono equivalente (CO2e).
                     Compreender e reduzir nossa Pegada de Carbono é essencial para combater as mudanças climáticas e
                     preservar o planeta para as futuras gerações.
+                    O Acordo de Paris, assinado pelas Nações Unidas em 12 de dezembro de 2015, é a referência
+                            fundamental para todas as políticas globais de redução de emissões. Ele propõe, em
+                            particular, manter o aumento da temperatura média global abaixo de 2 °C em comparação com os níveis
+                            pré-industriais, fazendo todo o possível para limitá-lo a 1,5 °C; aumentar a capacidade de
+                            adaptação aos efeitos adversos das mudanças climáticas e promover a resiliência climática; e
+                            garantir o financiamento necessário para um desenvolvimento de baixa emissão e favorável ao
+                            clima.
+
+                            É do Acordo de Paris que derivam as políticas em escala continental ou nacional, como o
+                            Acordo Verde Europeu, que visa alcançar a neutralidade climática na Europa até 2050 (ou seja, um
+                            equilíbrio zero entre o CO₂ emitido e absorvido); ou o recente plano Build Back Better nos
+                            Estados Unidos, que estabelece metas ambiciosas para a produção de energia renovável,
+                            eficiência energética em edifícios e eletrificação da frota de automóveis.
                 </p>
             </div>
         </section>
@@ -325,7 +405,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Calculadora da tua Pegada Ecológica. | Juntos por um planeta mais sustentável, pois chama-me meio-ambiente por
+            <p>&copy; 2025 Calculadora da tua Pegada Ecológica. | Juntos por um planeta mais sustentável, pois chama-me
+                meio-ambiente por
                 algum motivo! 🌍</p>
         </div>
     </footer>
