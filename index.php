@@ -196,7 +196,7 @@ include 'cabecalho.php';
                         </div>
                     </div>
 
-                    <button type="submit" class="calculate-btn">Calcular Pegada de Carbono</button>
+                    <button type="submit" class="calculate-btn">Calcular a Pegada de Carbono</button>
                 </form>
 
                 <?php if ($resultado): ?>
@@ -259,36 +259,32 @@ include 'cabecalho.php';
                 <div class="tip-card">
                     <span class="icon">💡</span>
                     <h3>Energia Eficiente</h3>
-                    <p>Substitui lâmpadas incandescentes por LED, desliga aparelhos da tomada quando não estiveres
-                        a usar e investe em eletrodomésticos eficientes.</p>
+                    <p>Substitui as lâmpadas incandescentes por LED, desliga os aparelhos da tomada quando não estiveres
+                        a usá-los e investe em eletrodomésticos eficientes.</p>
                 </div>
 
                 <div class="tip-card">
                     <span class="icon">🚲</span>
                     <h3>Transporte Sustentável</h3>
-                    <p>Usa transporte público, bicicleta ou caminha para distâncias curtas. </p>
+                    <p>Utiliza os transportes públicos, a bicicleta ou desloca-te a pé para distâncias curtas. </p>
                 </div>
 
                 <div class="tip-card">
                     <span class="icon">♻️</span>
                     <h3>Reciclagem</h3>
-                    <p>Separa corretamente o lixo, reutiliza materiais sempre que possível e tenta utilizar produtos
-                        com
-                        embalagens recicláveis.</p>
+                    <p>Separa corretamente o lixo, reutiliza materiais sempre que possível e dá preferência a produtos com embalagens recicláveis.</p>
                 </div>
 
                 <div class="tip-card">
                     <span class="icon">🌱</span>
                     <h3>Consumo Consciente</h3>
-                    <p>Opta por produtos locais, reduz o consumo de carne, evita o desperdício de alimentos e
-                        escolhe produtos sustentáveis.</p>
+                    <p>Opta por produtos locais, reduz o consumo de carne, evita o desperdício alimentar e privilegia produtos sustentáveis.</p>
                 </div>
 
                 <div class="tip-card">
                     <span class="icon">🏠</span>
                     <h3>Casa Sustentável</h3>
-                    <p>Melhora o isolamento térmico, usa aquecimento solar para água quente e considera energia
-                        renovável como painéis solares.</p>
+                    <p>Melhora o isolamento térmico, utiliza aquecimento solar para a água quente e considera fontes de energia renovável, como painéis solares.</p>
                 </div>
 
                 <div class="tip-card">
