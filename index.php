@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $progressClass = "progress-60";
         $alertClass = "alert-warning";
     } elseif ($totalAnual <= 8000) {
-        $classe = "Alta. Considere mudanças significativas ⚠️";
+        $classe = "Alta. Considera mudanças significativas ⚠️";
         $classeCss = "alta";
         $progressClass = "progress-80";
         $alertClass = "alert-warning";
@@ -172,7 +172,8 @@ include 'cabecalho.php';
                             <label for="transporte">Tipo de Transporte Principal</label>
                             <select id="transporte" name="transporte" required>
                                 <option value="">Selecione...</option>
-                                <option value="carro" <?= ($_POST['transporte'] ?? '') === 'carro' ? 'selected' : '' ?>>Carro</option>
+                                <option value="carro" <?= ($_POST['transporte'] ?? '') === 'carro' ? 'selected' : '' ?>>
+                                    Carro</option>
                                 <option value="moto" <?= ($_POST['transporte'] ?? '') === 'moto' ? 'selected' : '' ?>>
                                     Moto</option>
                                 <option value="publico" <?= ($_POST['transporte'] ?? '') === 'publico' ? 'selected' : '' ?>>Transporte Público</option>
