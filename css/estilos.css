@@ -100,7 +100,7 @@ nav {
   animation: fadeInUp 1s ease 0.2s both;
 }
 
-/* Novos estilos para a página inicial */
+/* Conteúdo da página inicial */
 .intro-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -246,6 +246,28 @@ nav {
   margin: 2rem 0;
 }
 
+.calculator-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.sobre-intro {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contactos-intro {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -386,6 +408,7 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   border-left: 4px solid #2d5a27;
+  text-align: center;
 }
 
 .tip-card:hover {
@@ -404,6 +427,26 @@ nav {
   display: block;
 }
 
+ul.social {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+ul.social li {
+  display: inline-block;
+}
+
+ul.social img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
 footer {
   background: rgba(45, 90, 39, 0.9);
   color: white;
@@ -412,6 +455,7 @@ footer {
   margin-top: 3rem;
 }
 
+/* Animações */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -423,21 +467,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* CSS-only progress bar simulation */
+/* Barra de progresso */
 .progress-container {
   background: #e0e0e0;
   border-radius: 10px;
@@ -461,23 +491,28 @@ footer {
   width: 20%;
   background: #2d5a27;
 }
+
 .progress-40 {
   width: 40%;
   background: #4a7c59;
 }
+
 .progress-60 {
   width: 60%;
   background: #f39c12;
 }
+
 .progress-80 {
   width: 80%;
   background: #e67e22;
 }
+
 .progress-100 {
   width: 100%;
   background: #e74c3c;
 }
 
+/* Alertas */
 .alert {
   padding: 1rem;
   margin: 1rem 0;

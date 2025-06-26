@@ -8,6 +8,7 @@
     <title>Calculadora da tua Pegada Ecológica - Pegada de Carbono</title>
 
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 
 <body>
@@ -95,10 +96,11 @@
         <nav class="container">
             <div class="logo">Calculadora da tua Pegada Ecológica</div>
             <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
+                <li><a href="#inicio">Introdução</a></li>
                 <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="#dicas">Dicas</a></li>
                 <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contactos">Contactos</a></li>
             </ul>
         </nav>
     </header>
@@ -108,6 +110,9 @@
             <div class="container">
                 <h1>Bem-vindo à Calculadora da tua Pegada Ecológica</h1>
                 <p>Uma ferramenta para avaliar e reduzir o teu impacto ambiental</p>
+
+                <a href="#calculadora" class="cta-button">Calcular a minha Pegada de Carbono</a>
+
 
                 <div class="intro-content">
                     <div class="intro-section">
@@ -120,7 +125,8 @@
                             Esta pegada abrange:
 
                             Emissões diretas: como a queima de combustíveis fósseis (ex: no carro ou no aquecimento de
-                            edifícios) e Emissões indiretas: como o uso de eletricidade gerada a partir de fontes não renováveis.
+                            edifícios) e Emissões indiretas: como o uso de eletricidade gerada a partir de fontes não
+                            renováveis.
 
                             Embora a unidade usada seja o CO₂, a pegada inclui também outros gases como o metano, o
                             óxido nitroso e os CFCs, que têm elevado potencial de aquecimento global.
@@ -131,100 +137,42 @@
                     </div>
 
                     <div class="intro-section">
-                        <h2>Pegada de Carbono e Pegada Ecológica</h2>
-                        <p> Na literatura científica sobre sustentabilidade, o conceito de Pegada de Carbono foi
-                            precedido
-                            pelo de Pegada Ecológica, introduzido no início da década de 1990 pelos ecologistas William
-                            Rees
-                            e Mathis Wackernagel. Esse conceito está mais próximo do que entendemos na linguagem
-                            cotidiana
-                            como "pegada", ou seja, uma porção de terra na qual uma marca visível é impressa. A pegada
-                            ecológica é, na verdade, a área total de terra (ou mar) necessária para sustentar uma
-                            população
-                            e, portanto, seu cálculo também considera a água consumida e a terra usada para plantações e
-                            criação de animais.
-
-                            Quando o aquecimento global e as emissões de CO₂ se tornaram o foco dos estudos de
-                            sustentabilidade ambiental, a medida da Pegada Ecológica caiu em desuso em comparação com a
-                            Pegada de Carbono, que se tornou uma ferramenta fundamental para monitorar a conformidade
-                            com os
-                            acordos internacionais de redução de emissões.
-                        </p>
-                    </div>
-
-                    <div class="intro-section">
                         <h2>Métodos de cálculo</h2>
-                        <p> Não existe um método único para calcular a Pegada de Carbono, pois envolve diversos factores
-                            e diferentes escalas. Normalmente, a pegada é estimada, com base em orientações
-                            internacionais, como as do IPCC (Painel Intergovernamental sobre Alterações Climáticas da
-                            ONU).
-
-                            Essas orientações utilizam indicadores estatísticos e económicos (ex.: consumo de
-                            combustíveis fósseis, produção industrial, uso do solo, número de animais criados) para
-                            calcular as emissões de gases com efeito de estufa, expressas em CO₂e (equivalente de
-                            dióxido de carbono).
-
-                            É igualmente importante considerar os sumidouros de carbono, como árvores plantadas, que
-                            reduzem o total de emissões.
-
-                            A Pegada de Carbono pode ser ajustada ao nível de detalhe necessário, devendo também ter em
-                            conta o impacto comparativo. Por exemplo, uma obra como uma ponte pode gerar emissões, mas
-                            reduzir outras no futuro, resultando numa pegada líquida menor ou até negativa.
+                        <p> A Pegada de Carbono é estimada com base em dados como consumo de combustíveis fósseis,
+                            produção industrial, uso do solo e criação de animais, considerando também sumidouros de
+                            carbono (ex: árvores plantadas). Pode ser ajustada ao nível de detalhe necessário.
                         </p>
                     </div>
 
                     <div class="intro-section">
-                        <h2> O impacto da Pegada de Carbono no meio ambiente</h2>
-                        <p> O esforço para calcular e reduzir a Pegada de Carbono deve-se ao facto de que cada
-                            quilograma adicional de CO₂ na atmosfera agrava o efeito de estufa, retendo o calor solar e
-                            provocando o aumento das temperaturas médias globais.
-
-                            Segundo o IPCC, entre 2011 e 2020, a temperatura média da Terra foi 1,09 °C superior à da
-                            era pré-industrial, continuando a subir cerca de 0,2 °C por década. Este aquecimento já está
-                            a causar eventos climáticos extremos com mais frequência, como inundações, secas, ondas de
-                            calor e chuvas intensas.
-
-                            Os actuais compromissos internacionais procuram limitar o aquecimento global a entre 1,5 e
-                            2 °C. Ultrapassar esse limite pode provocar impactos irreversíveis, como o derretimento das
-                            calotes polares, acidificação dos oceanos, colapso dos recifes de corais, perda de
-                            biodiversidade marinha, recuo das geleiras e desertificação.
-
-                            As consequências para os seres humanos incluem crises alimentares, devido à quebra na
-                            produção de culturas como trigo, arroz e milho, e o aumento da propagação de doenças
-                            infecciosas, favorecidas por climas mais quentes.
+                        <h2> Impacto Ambiental</h2>
+                        <p> O aumento de CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
+                            eventos climáticos extremos. Os acordos internacionais tentam limitar o aquecimento a
+                            1,5–2 °C para evitar consequências graves como derretimento polar, acidificação dos oceanos
+                            e crises alimentares.
                         </p>
                     </div>
 
                     <div class="intro-section">
-                        <h2> Setores com a maior Pegada de Carbono</h2>
-                        <p> Num mundo ainda fortemente dependente de combustíveis fósseis, o sector da energia continua
-                            a ser o principal responsável pelas emissões de gases com efeito de estufa. Em 2022, segundo
-                            a Agência Internacional de Energia, a produção de energia emitiu cerca de 15 gigatoneladas
-                            de CO₂, seguida pela indústria (9 Gt), transportes (8 Gt) e construção (5 Gt).
-
-                            Apesar destes valores, há sinais positivos: o crescimento das energias renováveis evitou
-                            cerca de 600 megatoneladas de CO₂ entre 2021 e 2022. O mesmo se verifica nos transportes,
-                            com o aumento dos veículos eléctricos e a melhoria na eficiência dos carros a combustão.
-
-                            Na indústria, os sectores mais difíceis de descarbonizar – como a produção de aço, cimento e
-                            petroquímicos – representam cerca de 30% das emissões globais, devido à sua elevada
-                            necessidade energética. Nestes casos, soluções como o hidrogénio verde, produzido com
-                            energia renovável, podem ser uma alternativa viável aos combustíveis fósseis, especialmente
-                            em contextos industriais.
+                        <h2> Setores com a maior Pegada</h2>
+                        <p> O setor energético é o maior emissor, seguido pela indústria, transportes e construção. O
+                            crescimento das energias renováveis ajuda a reduzir emissões. Alguns setores industriais,
+                            como aço e cimento, são mais difíceis de descarbonizar, mas o hidrogénio verde surge como
+                            alternativa.
                         </p>
                     </div>
                 </div>
 
-                <a href="#calculadora" class="cta-button">Calcular a minha Pegada de Carbono</a>
+
             </div>
         </section>
 
         <section id="calculadora" class="section">
             <div class="container">
                 <h2>Calculadora da tua Pegada de Carbono</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: #666;">Preencha os campos seguintes com os
-                    seus
-                    dados mensais para calcular a tua Pegada de Carbono anual</p>
+                <p class="calculator-intro">
+                    Preencha os campos seguintes com os seus dados mensais para calcular a tua Pegada de Carbono anual
+                </p>
 
                 <div class="calculator">
                     <form method="POST" action="#calculadora">
@@ -336,43 +284,42 @@
                     <div class="tip-card">
                         <span class="icon">💡</span>
                         <h3>Energia Eficiente</h3>
-                        <p>Substitua lâmpadas incandescentes por LED, desligue aparelhos da tomada quando não estiver
-                            usando e invista em eletrodomésticos eficientes.</p>
+                        <p>Substitui lâmpadas incandescentes por LED, desliga aparelhos da tomada quando não estiveres
+                            a usar e inviste em eletrodomésticos eficientes.</p>
                     </div>
 
                     <div class="tip-card">
                         <span class="icon">🚲</span>
                         <h3>Transporte Sustentável</h3>
-                        <p>Use transporte público, bicicleta ou caminhe para distâncias curtas. Considere carros
-                            elétricos ou híbridos para longas distâncias.</p>
+                        <p>Usa transporte público, bicicleta ou caminha para distâncias curtas. </p>
                     </div>
 
                     <div class="tip-card">
                         <span class="icon">♻️</span>
                         <h3>Reciclagem</h3>
-                        <p>Separe corretamente o lixo, reutilize materiais sempre que possível e prefira produtos com
+                        <p>Separa corretamente o lixo, reutiliza materiais sempre que possível e tenta utilizar produtos
+                            com
                             embalagens recicláveis.</p>
                     </div>
 
                     <div class="tip-card">
                         <span class="icon">🌱</span>
                         <h3>Consumo Consciente</h3>
-                        <p>Prefira produtos locais, reduza o consumo de carne, evite o desperdício de alimentos e
-                            escolha
-                            produtos sustentáveis.</p>
+                        <p>Opta por produtos locais, reduz o consumo de carne, evita o desperdício de alimentos e
+                            escolhe produtos sustentáveis.</p>
                     </div>
 
                     <div class="tip-card">
                         <span class="icon">🏠</span>
                         <h3>Casa Sustentável</h3>
-                        <p>Melhore o isolamento térmico, use aquecimento solar para água quente e considere energia
+                        <p>Melhora o isolamento térmico, usa aquecimento solar para água quente e considera energia
                             renovável como painéis solares.</p>
                     </div>
 
                     <div class="tip-card">
                         <span class="icon">💧</span>
                         <h3>Economia de Água</h3>
-                        <p>Tome banhos mais curtos, conserte vazamentos rapidamente e colete água da chuva para regar
+                        <p>Toma banhos mais curtos, conserta vazamentos rapidamente e coleta água da chuva para regar
                             plantas.</p>
                     </div>
                 </div>
@@ -382,25 +329,42 @@
         <section id="sobre" class="section">
             <div class="container">
                 <h2>Sobre a Pegada de Carbono</h2>
-                <p style="text-align: center; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                <p class="sobre-intro">
                     Compreender e reduzir nossa Pegada de Carbono é essencial para combater as mudanças climáticas e
                     preservar o planeta para as futuras gerações.
                     O Acordo de Paris, assinado pelas Nações Unidas em 12 de dezembro de 2015, é a referência
-                            fundamental para todas as políticas globais de redução de emissões. Ele propõe, em
-                            particular, manter o aumento da temperatura média global abaixo de 2 °C em comparação com os níveis
-                            pré-industriais, fazendo todo o possível para limitá-lo a 1,5 °C; aumentar a capacidade de
-                            adaptação aos efeitos adversos das mudanças climáticas e promover a resiliência climática; e
-                            garantir o financiamento necessário para um desenvolvimento de baixa emissão e favorável ao
-                            clima.
+                    fundamental para todas as políticas globais de redução de emissões. Ele propõe, em
+                    particular, manter o aumento da temperatura média global abaixo de 2 °C em comparação com os níveis
+                    pré-industriais, fazendo todo o possível para limitá-lo a 1,5 °C; aumentar a capacidade de
+                    adaptação aos efeitos adversos das mudanças climáticas e promover a resiliência climática; e
+                    garantir o financiamento necessário para um desenvolvimento de baixa emissão e favorável ao
+                    clima.
 
-                            É do Acordo de Paris que derivam as políticas em escala continental ou nacional, como o
-                            Acordo Verde Europeu, que visa alcançar a neutralidade climática na Europa até 2050 (ou seja, um
-                            equilíbrio zero entre o CO₂ emitido e absorvido); ou o recente plano Build Back Better nos
-                            Estados Unidos, que estabelece metas ambiciosas para a produção de energia renovável,
-                            eficiência energética em edifícios e eletrificação da frota de automóveis.
+                    É do Acordo de Paris que derivam as políticas em escala continental ou nacional, como o
+                    Acordo Verde Europeu, que visa alcançar a neutralidade climática na Europa até 2050 (ou seja, um
+                    equilíbrio zero entre o CO₂ emitido e absorvido).
                 </p>
             </div>
         </section>
+
+        <section id="contactos" class="section">
+            <div class="container">
+                <p class="contactos-intro"></p>
+                <h2>Contactos</h2>
+                <p class="contactos-intro">
+                    Os meus contactos são:
+
+                <ul class="social">
+                    <li><a href="https://www.linkedin.com/in/rui-ribeiro-2b9628228"><img src="img\linkedin.png" alt="Linkedin"></a></li>
+                    <li><a href="https://www.instagram.com/nsu.29"><img src="img\instagram.png" alt="Instagram"></a></li>
+                    <li><a href="https://wa.me/351964098927"><img src="img\Whatsapp.png" alt="Whatsapp"></a></li>
+                </ul>
+
+                </p>
+            </div>
+        </section>
+
+
     </main>
 
     <footer>
