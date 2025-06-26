@@ -1,14 +1,10 @@
-    <footer>
+<footer>
         <div class="container">
-            <img src="img/logo-rodape.png" alt="Pegada de carbono">
-
-            <ul class="social">
-                <li><a href="https://www.facebook.com/mirrorfashion">Facebook</a></li>
-                <li><a href="https://x.com/mirrorfashion">Twitter</a></li>
-                <li><a href="https://plus.google.com/mirrorfashion">Google+</a></li>
-            </ul>
+            <p>&copy; 2025 Calculadora da tua Pegada Ecológica. | Juntos por um planeta mais sustentável, pois chama-me
+                meio-ambiente por
+                algum motivo! 🌍</p>
         </div>
     </footer>
-    </body>
+</body>
 
-    </html>
+</html>

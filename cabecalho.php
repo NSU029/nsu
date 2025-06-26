@@ -3,26 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><?php print $cabecalho_title; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/reset.css">
+    <title>Calculadora da tua Pegada Ecológica - Pegada de Carbono</title>
+
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
-    <?php print @$cabecalho_css; ?>
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 
 <body>
-
-    <header class="container">
-        <!-- Conteúdo do cabeçalho -->
-        <h1><img src="img/logo.png" alt="Pegada de Carbono"></h1>
-
-        <nav class="menu-opcoes">
-            <!-- ul>li*5>a -->
-            <ul>
-                <li><a href="sobre.php">Sobre</a></li>
-                <li><a href="#">Contacto</a></li>
+    <header>
+        <nav class="container">
+            <div class="logo">Calculadora da tua Pegada Ecológica</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Introdução</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contactos">Contactos</a></li>
             </ul>
         </nav>
     </header>
