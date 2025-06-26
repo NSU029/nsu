@@ -142,7 +142,7 @@ include 'cabecalho.php';
 
     <section id="calculadora" class="section">
         <div class="container">
-            <h2>Calculadora da tua Pegada de Carbono</h2>
+            <h2>Calculadora</h2>
             <p class="calculator-intro">
                 Preencha os campos seguintes com os seus dados mensais para calcular a tua Pegada de Carbono anual
             </p>

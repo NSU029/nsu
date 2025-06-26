@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Calculadora da tua Pegada Ecológica</div>
+            <div class="logo">Calculadora Ambiental</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#calculadora">Calculadora</a></li>

@@ -98,7 +98,7 @@
     flex-wrap: wrap; 
     gap: 1.5rem; 
   }
-  .logo { font-size: 1.4rem; margin-bottom: 1rem; }
+  .logo { font-size: 1.6rem; margin-bottom: 1rem; }
   .logo::before { font-size: 1.7rem; }
   
   .introducao { padding: 3rem 0; }
@@ -156,7 +156,7 @@
     display: flex; width: 100%; justify-content: center; 
     flex-wrap: wrap; gap: 1.5rem; 
   }
-  .logo { font-size: 1.4rem; margin-bottom: 1rem; }
+  .logo { font-size: 1.7rem; margin-bottom: 1rem; }
   .logo::before { font-size: 1.7rem; }
   
   .introducao { padding: 3rem 0; }
