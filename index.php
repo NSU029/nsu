@@ -2,6 +2,7 @@
 $resultado = null;
 $totalAnual = 0;
 
+// CALCULADORA PHP
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $energia = floatval($_POST['energia'] ?? 0);
     $gas = floatval($_POST['gas'] ?? 0);
@@ -77,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 }
 
-// Incluir o cabeçalho
 include 'cabecalho.php';
 ?>
 
@@ -137,168 +137,37 @@ include 'cabecalho.php';
                         hidrogénio verde surge como uma alternativa promissora.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="intro-section">
+                    <h2> Iniciativas globais</h2>
+                    <p> Compreender e reduzir a nossa Pegada de Carbono é essencial para combater as alterações
+                        climáticas e
+                        preservar o planeta para as gerações futuras.
+                        O Acordo de Paris, assinado pelas Nações Unidas a 12 de Dezembro de 2015, é a referência
+                        fundamental para
+                        todas as políticas globais de redução de emissões. Propõe, em particular, manter o aumento da
+                        temperatura
+                        média global abaixo dos 2 °C em comparação com os níveis pré-industriais, fazendo todos os
+                        esforços para
+                        limitá-lo a 1,5 °C; aumentar a capacidade de adaptação aos efeitos adversos das alterações
+                        climáticas e
+                        promover a resiliência climática; e garantir o financiamento necessário para um desenvolvimento
+                        com baixas
+                        emissões e favorável ao clima.
 
-    <section id="calculadora" class="section">
-        <div class="container">
-            <h2>Calculadora</h2>
-            <p class="calculator-intro">
-                Preenche os campos seguintes com os seus dados mensais para calcular a tua Pegada de Carbono anual
-            </p>
-
-            <div class="calculator">
-                <form method="POST" action="#calculadora">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="energia">Consumo de Energia Elétrica (kWh/mês)</label>
-                            <input type="number" id="energia" name="energia" placeholder="Ex: 250"
-                                value="<?= htmlspecialchars($_POST['energia'] ?? '') ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="gas">Consumo de Gás (m³/mês)</label>
-                            <input type="number" id="gas" name="gas" placeholder="Ex: 15"
-                                value="<?= htmlspecialchars($_POST['gas'] ?? '') ?>" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="combustivel">Consumo de Combustível (litros/mês)</label>
-                            <input type="number" id="combustivel" name="combustivel" placeholder="Ex: 80"
-                                value="<?= htmlspecialchars($_POST['combustivel'] ?? '') ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="transporte">Tipo de Transporte Principal</label>
-                            <select id="transporte" name="transporte" required>
-                                <option value="">Selecione...</option>
-                                <option value="carro" <?= ($_POST['transporte'] ?? '') === 'carro' ? 'selected' : '' ?>>
-                                    Carro</option>
-                                <option value="moto" <?= ($_POST['transporte'] ?? '') === 'moto' ? 'selected' : '' ?>>
-                                    Moto</option>
-                                <option value="publico" <?= ($_POST['transporte'] ?? '') === 'publico' ? 'selected' : '' ?>>Transporte Público</option>
-                                <option value="bicicleta" <?= ($_POST['transporte'] ?? '') === 'bicicleta' ? 'selected' : '' ?>>Bicicleta / Caminhada</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="distancia">Distância percorrida por mês (km)</label>
-                            <input type="number" id="distancia" name="distancia" placeholder="Ex: 1000"
-                                value="<?= htmlspecialchars($_POST['distancia'] ?? '') ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pessoas">Número de pessoas na tua casa</label>
-                            <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1"
-                                value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="calculate-btn">Calcular a Pegada de Carbono</button>
-                </form>
-
-                <?php if ($resultado): ?>
-                    <div class="result">
-                        <h3>A tua Pegada de Carbono</h3>
-                        <div class="value"><?= number_format($resultado['total'], 1) ?> kg CO₂/ano</div>
-
-                        <div class="progress-container">
-                            <div class="progress-bar <?= $resultado['progressClass'] ?>">
-                                <?= $resultado['progressClass'] === 'progress-20' ? '20%' :
-                                    ($resultado['progressClass'] === 'progress-40' ? '40%' :
-                                        ($resultado['progressClass'] === 'progress-60' ? '60%' :
-                                            ($resultado['progressClass'] === 'progress-80' ? '80%' : '100%'))) ?>
-                            </div>
-                        </div>
-
-                        <div class="classification <?= $resultado['classeCss'] ?>">
-                            <?= $resultado['classe'] ?>
-                        </div>
-
-                        <div class="comparison">
-                            <div class="comparison-item">
-                                <span class="icon">🌳</span>
-                                <div>Árvores necessárias</div>
-                                <strong><?= $resultado['arvores'] ?></strong>
-                            </div>
-                            <div class="comparison-item">
-                                <span class="icon">🚗</span>
-                                <div>Km de carro</div>
-                                <strong><?= number_format($resultado['kmCarro']) ?></strong>
-                            </div>
-                            <div class="comparison-item">
-                                <span class="icon">⚡</span>
-                                <div>Lâmpadas 60W (horas)</div>
-                                <strong><?= number_format($resultado['lampadas']) ?></strong>
-                            </div>
-                        </div>
-
-                        <div class="alert <?= $resultado['alertClass'] ?>">
-                            <?php if ($resultado['total'] <= 2000): ?>
-                                Parabéns! Estás no caminho certo para um futuro sustentável.
-                            <?php elseif ($resultado['total'] <= 4000): ?>
-                                Bom trabalho! Com pequenos ajustes poderás melhorar ainda mais.
-                            <?php elseif ($resultado['total'] <= 6000): ?>
-                                Há várias oportunidades para reduzir a tua Pegada de Carbono.
-                            <?php else: ?>
-                                Considera implementar mudanças significativas nos teus hábitos.
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <section id="dicas" class="section">
-        <div class="container">
-            <h2>Dicas para reduzires a tua Pegada de Carbono</h2>
-            <div class="tips">
-                <div class="tip-card">
-                    <span class="icon">💡</span>
-                    <h3>Energia Eficiente</h3>
-                    <p>Substitui as lâmpadas incandescentes por LED, desliga os aparelhos da tomada quando não estiveres
-                        a usá-los e investe em eletrodomésticos eficientes.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="icon">🚲</span>
-                    <h3>Transporte Sustentável</h3>
-                    <p>Utiliza os transportes públicos, a bicicleta ou desloca-te a pé para distâncias curtas. </p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="icon">♻️</span>
-                    <h3>Reciclagem</h3>
-                    <p>Separa corretamente o lixo, reutiliza materiais sempre que possível e dá preferência a produtos
-                        com embalagens recicláveis.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="icon">🌱</span>
-                    <h3>Consumo Consciente</h3>
-                    <p>Opta por produtos locais, reduz o consumo de carne, evita o desperdício alimentar e privilegia
-                        produtos sustentáveis.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="icon">🏠</span>
-                    <h3>Casa Sustentável</h3>
-                    <p>Melhora o isolamento térmico, utiliza aquecimento solar para a água quente e considera fontes de
-                        energia renovável, como painéis solares.</p>
-                </div>
-
-                <div class="tip-card">
-                    <span class="icon">💧</span>
-                    <h3>Economia de Água</h3>
-                    <p>Toma banhos mais curtos, repara fugas rapidamente e recolhe água da chuva para regar as plantas.
+                        É do Acordo de Paris que derivam as políticas à escala continental ou nacional, como o Pacto
+                        Ecológico
+                        Europeu, que visa alcançar a neutralidade carbónica na Europa até 2050 (ou seja, um equilíbrio
+                        nulo entre o
+                        CO₂ emitido e absorvido).
                     </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <?php include 'calculadora.php'; ?>
+
+    <?php include 'dicas.php'; ?>
 
     <?php include 'sobre.php'; ?>
 
