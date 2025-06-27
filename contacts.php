@@ -1,33 +1,33 @@
 <section class="section">
 
-    <section id="contactos" class="">
+    <section id="contacts" class="">
 
-        <h2>Contactos</h2>
+        <h2>Contacts</h2>
         <div class="contact-form">
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Nome Completo *</label>
-                        <input type="text" id="name" name="name" required placeholder="Digite o seu nome completo">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Write your full name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                        <input type="email" id="email" name="email" required placeholder="youremail@example.com">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Assunto *</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Sobre o que é a sua mensagem?">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What is this message about?">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mensagem *</label>
+                    <label for="message">Message *</label>
                     <textarea id="message" name="message" required
-                        placeholder="Diga-nos como podemos ajudar..."></textarea>
+                        placeholder="What can we help you with..."></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                <button type="submit" class="submit-btn">Send message</button>
             </form>
         </div>
         </div>
