@@ -18,7 +18,7 @@
             <ul class="nav-links">
                 <li><a href="index.php#calculadora">Calculadora</a></li>
                 <li><a href="index.php#dicas">Dicas</a></li>
-                <li><a href="#sobre.php">Sobre</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
                 <li><a href="#contactos">Contactos</a></li>
                 <li><a href="index-en.php" title="English">
                         <img src="https://flagcdn.com/gb.svg" alt="UK Flag" width="24" height="16">

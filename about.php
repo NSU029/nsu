@@ -19,7 +19,7 @@
                 <li><a href="index-en.php#calculator">Calculator</a></li>
                 <li><a href="index-en.php#tips">Tips</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#contactos">Contacts</a></li>
                 <li><a href="index.php" title="Portuguese">
                         <img src="https://flagcdn.com/pt.svg" alt="Flag PT" width="24" height="16">
                     </a></li>
