@@ -91,7 +91,6 @@ include 'cabecalho.php';
         </div>
     </section>
 
-    <?php include 'sobre.php'; ?>
 
     <?php include 'calculadora.php'; ?>
 

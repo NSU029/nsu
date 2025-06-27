@@ -1,3 +1,4 @@
+
 <section id="dicas" class="section">
     <div class="container">
         <h2>Dicas para reduzires a tua Pegada de Carbono</h2>
