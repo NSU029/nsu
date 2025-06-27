@@ -108,7 +108,7 @@
     </header>
 
     <main>
-        <section id="sobre" class="sobre">
+        <section id="inicio" class="inicio">
             <div class="container">
                 <h1>Welcome to the Environmental Calculator</h1>
                 <p>A tool to assess and reduce your Ecological Footprint</p>
@@ -120,7 +120,7 @@
         <section id="calculadora" class="section">
             <div class="container">
                 <h2>Calculator</h2>
-                <p class="calculator-intro">
+                <p class="calculator-sobre">
                     Fill in the following fields with your monthly data to calculate your annual Carbon Footprint
                 </p>
 

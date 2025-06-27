@@ -31,8 +31,8 @@
 
 
 <section id="sobre" class="">
-    <div class="intro-content">
-        <div class="intro-section">
+    <div class="sobre-content">
+        <div class="sobre-section">
             <h2>O que é a Pegada de Carbono?</h2>
             <p>A Pegada de Carbono representa a quantidade total de gases com efeito de estufa emitidos direta
                 ou indiretamente pelas nossas atividades diárias. É medida em quilogramas de CO₂ equivalente
@@ -52,7 +52,7 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2>Métodos de cálculo</h2>
             <p> A Pegada de Carbono é estimada com base em dados como o consumo de combustíveis fósseis, a
                 produção industrial, a utilização do solo e a criação de animais, considerando também os
@@ -61,7 +61,7 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2> Impacto Ambiental</h2>
             <p> O aumento do CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
                 fenómenos climáticos extremos. Os acordos internacionais procuram limitar o aquecimento a
@@ -70,7 +70,7 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2> Setores com a maior Pegada</h2>
             <p> O setor energético é o maior emissor, seguido pela indústria, pelos transportes e pela
                 construção. O crescimento das energias renováveis contribui para a redução das emissões. Alguns
@@ -78,7 +78,7 @@
                 hidrogénio verde surge como uma alternativa promissora.
             </p>
         </div>
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2> Iniciativas globais</h2>
             <p>
                 O Acordo de Paris, assinado em 12 de dezembro de 2015 pelas Nações Unidas, serve de referência

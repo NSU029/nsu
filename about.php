@@ -28,9 +28,9 @@
     </header>
 </body>
 
-<section id="sobre" class="">
-    <div class="intro-content">
-        <div class="intro-section">
+<section id="inicio" class="">
+    <div class="sobre-content">
+        <div class="sobre-section">
             <h2>What is the Carbon Footprint?</h2>
             <p>The Carbon Footprint represents the total amount of greenhouse gases emitted directly
                 or indirectly by our daily activities. It is measured in kilograms of CO₂ equivalent
@@ -48,7 +48,7 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2>Calculation Methods</h2>
             <p>The Carbon Footprint is estimated based on data such as fossil fuel consumption,
                 industrial production, land use, and livestock farming, also considering carbon sinks
@@ -56,7 +56,7 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2>Environmental Impact</h2>
             <p>Increasing CO₂ intensifies the greenhouse effect and raises global temperatures,
                 causing extreme weather events. International agreements seek to limit warming to
@@ -65,14 +65,14 @@
             </p>
         </div>
 
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2>Sectors with the Largest Footprint</h2>
             <p>The energy sector is the largest emitter, followed by industry, transport, and construction.
                 The growth of renewable energy helps reduce emissions. Some industrial sectors, like steel
                 and cement, are harder to decarbonize, but green hydrogen appears promising.
             </p>
         </div>
-        <div class="intro-section">
+        <div class="sobre-section">
             <h2>Global Initiatives</h2>
             <p>
                 The Paris Agreement, signed on December 12, 2015, by the United Nations, serves as a global

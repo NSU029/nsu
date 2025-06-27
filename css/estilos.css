@@ -36,20 +36,20 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 }
 .nav-links a:hover::after { width: 100%; }
 
-/* Seção Sobre e Intro */
-.sobre { text-align: center; padding: 4rem 0; color: white; }
-.sobre h1 { font-size: 2.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
-.sobre p { font-size: 1.2rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; }
+/* Seção inicio e sobre */
+.inicio { text-align: center; padding: 4rem 0; color: white; }
+.inicio h1 { font-size: 2.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+.inicio p { font-size: 1.2rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; }
 
-.intro-content { max-width: 1000px; margin: 0 auto; padding: 2rem 0; text-align: justify; }
+.sobre-content { max-width: 1000px; margin: 0 auto; padding: 2rem 0; text-align: justify; }
 
-.intro-section {
+.sobre-section {
   background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
   padding: 2rem; border-radius: 15px; margin: 2rem 0; animation: fadeInUp 1s ease 0.4s both;
 }
-.intro-section h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
-.intro-section p { font-size: 1.1rem; line-height: 1.8; color: rgba(255, 255, 255, 0.9); }
-.intro-section ul { list-style-type: none; list-style-position: inside; text-align: center; margin: 0 auto; padding: 0; }
+.sobre-section h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+.sobre-section p { font-size: 1.1rem; line-height: 1.8; color: rgba(255, 255, 255, 0.9); }
+.sobre-section ul { list-style-type: none; list-style-position: inside; text-align: center; margin: 0 auto; padding: 0; }
 
 /* Botão CTA */
 .cta-button {
@@ -72,7 +72,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 2rem; border-radius: 15px; margin: 2rem 0;
 }
-.calculator-intro { text-align: center; margin-bottom: 2rem; color: #666; }
+.calculator-sobre { text-align: center; margin-bottom: 2rem; color: #666; }
 
 /* Formulário */
 .form-group { margin-bottom: 1.5rem; }
