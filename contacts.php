@@ -4,7 +4,7 @@
 
         <h2>Contacts</h2>
         <div class="contact-form">
-
+            <form action="process.php" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -12,7 +12,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="youremail@example.com">
+                        <input type="email" id="email" name="email" required placeholder="your_email@example.com">
                     </div>
                 </div>
 
@@ -30,14 +30,11 @@
                 <button type="submit" class="submit-btn">Send message</button>
             </form>
         </div>
-        </div>
-   
-
-
+    </section>
 
     <ul class="social">
         <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ruiribeiro29@gmail.com" target="_blank"><img
-                    src="img/gmail.png" alt="Linkedin"></a></li>
+                    src="img/gmail.png" alt="Gmail"></a></li>
         <li><a href="https://www.linkedin.com/in/rui-ribeiro-2b9628228" target="_blank"><img src="img/linkedin.png"
                     alt="Linkedin"></a></li>
         <li><a href="https://www.instagram.com/nsu.29" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>

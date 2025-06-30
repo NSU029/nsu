@@ -91,10 +91,198 @@
                 carbónica na Europa até 2050, ou seja, um equilíbrio entre o CO₂ emitido e absorvido.
             </p>
         </div>
+
+        <div class="sobre-section">
+            <h2>🚗 Emissões de CO₂ por Meio de Transporte</h2>
+            <div class="table-container">
+                <table class="transport-table">
+                    <thead>
+                        <tr>
+                            <th>Meio de Transporte</th>
+                            <th>Emissões CO₂ (g/km)</th>
+                            <th>Classificação</th>
+                            <th>Distância Exemplo</th>
+                            <th>Total CO₂ (kg/ano)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="eco-indicator">🚶‍♂️ A pé</span></td>
+                            <td><span class="co2-value co2-low">0</span></td>
+                            <td class="highlight-green">Excelente</td>
+                            <td>5 km/dia</td>
+                            <td class="highlight-green">0.0</td>
+                        </tr>
+                        <tr>
+                            <td><span class="eco-indicator">🚲 Bicicleta</span></td>
+                            <td><span class="co2-value co2-low">0</span></td>
+                            <td class="highlight-green">Excelente</td>
+                            <td>10 km/dia</td>
+                            <td class="highlight-green">0.0</td>
+                        </tr>
+                        <tr>
+                            <td><span class="eco-indicator">🚌 Autocarro</span></td>
+                            <td><span class="co2-value co2-medium">89</span></td>
+                            <td>Bom</td>
+                            <td>20 km/dia</td>
+                            <td>0.65</td>
+                        </tr>
+                        <tr>
+                            <td><span class="eco-indicator">🚊 Elétrico/Metro</span></td>
+                            <td><span class="co2-value co2-low">45</span></td>
+                            <td class="highlight-green">Muito Bom</td>
+                            <td>15 km/dia</td>
+                            <td>0.25</td>
+                        </tr>
+                        <tr>
+                            <td><span class="eco-indicator">🚗 Carro (gasolina)</span></td>
+                            <td><span class="co2-value co2-high">180</span></td>
+                            <td class="highlight-red">Elevado</td>
+                            <td>30 km/dia</td>
+                            <td class="highlight-red">1.97</td>
+                        </tr>
+                        <tr>
+                            <td><span class="eco-indicator">✈️ Avião (doméstico)</span></td>
+                            <td><span class="co2-value co2-high">285</span></td>
+                            <td class="highlight-red">Muito Elevado</td>
+                            <td>500 km/mês</td>
+                            <td class="highlight-red">1.71</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>⚡ Consumo Energético Doméstico</h2>
+            <div class="table-container">
+                <table class="energy-table">
+                    <thead>
+                        <tr>
+                            <th>Equipamento</th>
+                            <th>Potência (W)</th>
+                            <th>Horas/Dia</th>
+                            <th>Consumo (kWh/mês)</th>
+                            <th>Eficiência</th>
+                            <th>CO₂/mês (kg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>💡 Lâmpada LED</td>
+                            <td class="consumption">9</td>
+                            <td>5</td>
+                            <td>1.35</td>
+                            <td><span class="efficiency alta">Alta</span></td>
+                            <td class="highlight-green">0.54</td>
+                        </tr>
+                        <tr>
+                            <td>❄️ Frigorífico A+++</td>
+                            <td class="consumption">150</td>
+                            <td>24</td>
+                            <td>108</td>
+                            <td><span class="efficiency alta">Alta</span></td>
+                            <td>43.2</td>
+                        </tr>
+                        <tr>
+                            <td>🖥️ Computador</td>
+                            <td class="consumption">300</td>
+                            <td>8</td>
+                            <td>72</td>
+                            <td><span class="efficiency media">Média</span></td>
+                            <td>28.8</td>
+                        </tr>
+                        <tr>
+                            <td>📺 TV LED 50"</td>
+                            <td class="consumption">120</td>
+                            <td>6</td>
+                            <td>21.6</td>
+                            <td><span class="efficiency alta">Alta</span></td>
+                            <td>8.64</td>
+                        </tr>
+                        <tr>
+                            <td>🔥 Aquecedor elétrico</td>
+                            <td class="consumption">2000</td>
+                            <td>4</td>
+                            <td>240</td>
+                            <td><span class="efficiency baixa">Baixa</span></td>
+                            <td class="highlight-red">96.0</td>
+                        </tr>
+                        <tr>
+                            <td>👕 Máquina de lavar</td>
+                            <td class="consumption">500</td>
+                            <td>1</td>
+                            <td>15</td>
+                            <td><span class="efficiency media">Média</span></td>
+                            <td>6.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>💡 Dicas para Reduzir a Pegada Ecológica</h2>
+            <div class="table-container">
+                <table class="tips-table">
+                    <thead>
+                        <tr>
+                            <th>Ação Sustentável</th>
+                            <th>Impacto Ambiental</th>
+                            <th>Poupança CO₂/ano</th>
+                            <th>Dificuldade</th>
+                            <th>Poupança €/ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🚲 Usar bicicleta</td>
+                            <td><span class="impact alto">Alto</span></td>
+                            <td class="highlight-green">1,500 kg</td>
+                            <td class="difficulty">Fácil</td>
+                            <td class="highlight-green">€1,200</td>
+                        </tr>
+                        <tr>
+                            <td>💡 Substituir lâmpadas por LED</td>
+                            <td><span class="impact medio">Médio</span></td>
+                            <td>200 kg</td>
+                            <td class="difficulty">Muito Fácil</td>
+                            <td>€150</td>
+                        </tr>
+                        <tr>
+                            <td>🌱 Dieta vegetariana 3x/semana</td>
+                            <td><span class="impact alto">Alto</span></td>
+                            <td class="highlight-green">800 kg</td>
+                            <td class="difficulty">Moderada</td>
+                            <td>€400</td>
+                        </tr>
+                        <tr>
+                            <td>♻️ Reciclar todo o lixo</td>
+                            <td><span class="impact medio">Médio</span></td>
+                            <td>300 kg</td>
+                            <td class="difficulty">Fácil</td>
+                            <td>€50</td>
+                        </tr>
+                        <tr>
+                            <td>🏠 Isolar termicamente a casa</td>
+                            <td><span class="impact alto">Alto</span></td>
+                            <td class="highlight-green">2,000 kg</td>
+                            <td class="difficulty">Difícil</td>
+                            <td class="highlight-green">€800</td>
+                        </tr>
+                        <tr>
+                            <td>☀️ Instalar painéis solares</td>
+                            <td><span class="impact alto">Alto</span></td>
+                            <td class="highlight-green">3,500 kg</td>
+                            <td class="difficulty">Muito Difícil</td>
+                            <td class="highlight-green">€1,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </p>
     </div>
-</section>
 
 <?php include 'contactos.php'; ?>
+
+</section>
 
 <?php include 'rodape.php'; ?>
 

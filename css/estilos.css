@@ -307,3 +307,159 @@ footer { background: rgba(45, 90, 39, 0.9); color: white; text-align: center; pa
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== TABELAS ===== */
+.table-container {
+    margin: 30px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    border: 2px solid #e8f5e8;
+    box-shadow: 0 15px 35px rgba(45, 80, 22, 0.2);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+thead {
+    background: linear-gradient(135deg, #2d5016, #4a7c59);
+    color: white;
+}
+
+thead th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+tbody tr {
+    transition: 0.3s ease;
+    border-bottom: 1px solid #e8f5e8;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fdf8;
+}
+
+tbody tr:hover {
+    background: linear-gradient(135deg, #4a7c59, #6b9080);
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(74, 124, 89, 0.4);
+}
+
+tbody td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #e8f5e8;
+}
+
+tbody td:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+}
+
+/* ===== ESTILOS ESPECÍFICOS ===== */
+.co2-value,
+.efficiency,
+.impact {
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 6px 12px;
+    position: relative;
+    color: white;
+}
+
+.transport-table .co2-value {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.co2-low { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.co2-medium { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.co2-high { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+.co2-value::after {
+    position: absolute;
+    bottom: 2px;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.co2-low::after { width: 30%; background: #2ecc71; }
+.co2-medium::after { width: 60%; background: #f39c12; }
+.co2-high::after { width: 90%; background: #e74c3c; }
+
+.energy-table .consumption {
+    font-weight: bold;
+    color: #2d5016;
+    font-size: 16px;
+}
+
+.efficiency.alta {
+    background: #d5f4e6;
+    color: #27ae60;
+    border: 2px solid #27ae60;
+}
+
+.efficiency.media {
+    background: #fef9e7;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+}
+
+.efficiency.baixa {
+    background: #fadbd8;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.tips-table .difficulty {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.impact.alto { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.impact.medio { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.impact.baixo { background: linear-gradient(135deg, #3498db, #2980b9); }
+
+.eco-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.leaf-icon { color: #27ae60; font-size: 16px; }
+.warning-icon { color: #e74c3c; font-size: 16px; }
+
+.highlight-green {
+    background: rgba(39, 174, 96, 0.1);
+    border-radius: 8px;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+.highlight-red {
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 8px;
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}

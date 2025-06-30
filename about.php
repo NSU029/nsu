@@ -85,16 +85,202 @@
             </p>
         </div>
     </div>
-</section>
 
-<?php include 'contacts.php'; ?>
+    <div class="sobre-section">
+        <h2>🚗 CO₂ Emissions by Mode of Transport</h2>
+        <div class="table-container">
+            <table class="transport-table">
+                <thead>
+                    <tr>
+                        <th>Mode of Transport</th>
+                        <th>CO₂ Emissions (g/km)</th>
+                        <th>Rating</th>
+                        <th>Example Distance</th>
+                        <th>Total CO₂ (kg/year)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="eco-indicator">🚶‍♂️ On Foot</span></td>
+                        <td><span class="co2-value co2-low">0</span></td>
+                        <td class="highlight-green">Excellent</td>
+                        <td>5 km/day</td>
+                        <td class="highlight-green">0.0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="eco-indicator">🚲 Bicycle</span></td>
+                        <td><span class="co2-value co2-low">0</span></td>
+                        <td class="highlight-green">Excellent</td>
+                        <td>10 km/day</td>
+                        <td class="highlight-green">0.0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="eco-indicator">🚌 Bus</span></td>
+                        <td><span class="co2-value co2-medium">89</span></td>
+                        <td>Good</td>
+                        <td>20 km/day</td>
+                        <td>0.65</td>
+                    </tr>
+                    <tr>
+                        <td><span class="eco-indicator">🚊 Tram/Metro</span></td>
+                        <td><span class="co2-value co2-low">45</span></td>
+                        <td class="highlight-green">Very Good</td>
+                        <td>15 km/day</td>
+                        <td>0.25</td>
+                    </tr>
+                    <tr>
+                        <td><span class="eco-indicator">🚗 Car (petrol)</span></td>
+                        <td><span class="co2-value co2-high">180</span></td>
+                        <td class="highlight-red">High</td>
+                        <td>30 km/day</td>
+                        <td class="highlight-red">1.97</td>
+                    </tr>
+                    <tr>
+                        <td><span class="eco-indicator">✈️ Plane (domestic)</span></td>
+                        <td><span class="co2-value co2-high">285</span></td>
+                        <td class="highlight-red">Very High</td>
+                        <td>500 km/month</td>
+                        <td class="highlight-red">1.71</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>⚡ Household Energy Consumption</h2>
+        <div class="table-container">
+            <table class="energy-table">
+                <thead>
+                    <tr>
+                        <th>Appliance</th>
+                        <th>Power (W)</th>
+                        <th>Hours/Day</th>
+                        <th>Consumption (kWh/month)</th>
+                        <th>Efficiency</th>
+                        <th>CO₂/month (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>💡 LED Bulb</td>
+                        <td class="consumption">9</td>
+                        <td>5</td>
+                        <td>1.35</td>
+                        <td><span class="efficiency alta">High</span></td>
+                        <td class="highlight-green">0.54</td>
+                    </tr>
+                    <tr>
+                        <td>❄️ Fridge A+++</td>
+                        <td class="consumption">150</td>
+                        <td>24</td>
+                        <td>108</td>
+                        <td><span class="efficiency alta">High</span></td>
+                        <td>43.2</td>
+                    </tr>
+                    <tr>
+                        <td>🖥️ Computer</td>
+                        <td class="consumption">300</td>
+                        <td>8</td>
+                        <td>72</td>
+                        <td><span class="efficiency media">Medium</span></td>
+                        <td>28.8</td>
+                    </tr>
+                    <tr>
+                        <td>📺 50" LED TV</td>
+                        <td class="consumption">120</td>
+                        <td>6</td>
+                        <td>21.6</td>
+                        <td><span class="efficiency alta">High</span></td>
+                        <td>8.64</td>
+                    </tr>
+                    <tr>
+                        <td>🔥 Electric Heater</td>
+                        <td class="consumption">2000</td>
+                        <td>4</td>
+                        <td>240</td>
+                        <td><span class="efficiency baixa">Low</span></td>
+                        <td class="highlight-red">96.0</td>
+                    </tr>
+                    <tr>
+                        <td>👕 Washing Machine</td>
+                        <td class="consumption">500</td>
+                        <td>1</td>
+                        <td>15</td>
+                        <td><span class="efficiency media">Medium</span></td>
+                        <td>6.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>💡 Tips to Reduce Your Ecological Footprint</h2>
+        <div class="table-container">
+            <table class="tips-table">
+                <thead>
+                    <tr>
+                        <th>Sustainable Action</th>
+                        <th>Environmental Impact</th>
+                        <th>CO₂ Savings/year</th>
+                        <th>Difficulty</th>
+                        <th>€ Savings/year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🚲 Use a bicycle</td>
+                        <td><span class="impact alto">High</span></td>
+                        <td class="highlight-green">1,500 kg</td>
+                        <td class="difficulty">Easy</td>
+                        <td class="highlight-green">€1,200</td>
+                    </tr>
+                    <tr>
+                        <td>💡 Replace bulbs with LEDs</td>
+                        <td><span class="impact medio">Medium</span></td>
+                        <td>200 kg</td>
+                        <td class="difficulty">Very Easy</td>
+                        <td>€150</td>
+                    </tr>
+                    <tr>
+                        <td>🌱 Vegetarian diet 3x/week</td>
+                        <td><span class="impact alto">High</span></td>
+                        <td class="highlight-green">800 kg</td>
+                        <td class="difficulty">Moderate</td>
+                        <td>€400</td>
+                    </tr>
+                    <tr>
+                        <td>♻️ Recycle all waste</td>
+                        <td><span class="impact medio">Medium</span></td>
+                        <td>300 kg</td>
+                        <td class="difficulty">Easy</td>
+                        <td>€50</td>
+                    </tr>
+                    <tr>
+                        <td>🏠 Thermally insulate your home</td>
+                        <td><span class="impact alto">High</span></td>
+                        <td class="highlight-green">2,000 kg</td>
+                        <td class="difficulty">Difficult</td>
+                        <td class="highlight-green">€800</td>
+                    </tr>
+                    <tr>
+                        <td>☀️ Install solar panels</td>
+                        <td><span class="impact alto">High</span></td>
+                        <td class="highlight-green">3,500 kg</td>
+                        <td class="difficulty">Very Difficult</td>
+                        <td class="highlight-green">€1,500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <?php include 'contacts.php'; ?>
+    
+</section>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 - Your Ecological Footprint Calculator <br> Together for a more sustainable planet 🌍</p>
         </div>
     </footer>
-
-</body>
 
 </html>
