@@ -6,37 +6,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Receive and sanitize form data
     $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
+
+    $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
+    $website = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
+    $preferredDate = isset($_POST['preferreddate']) ? htmlspecialchars(trim($_POST['preferreddate'])) : '';
+    $company = isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '';
+    $category = isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : '';
+    $budget = isset($_POST['budget']) ? htmlspecialchars(trim($_POST['budget'])) : '';
+
     $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
-    
-    // Validate if all fields were filled
+
+    // Validate that all required fields are filled
     $error = false;
-    $error_messages = [];
-    
+    $errorMessages = [];
+
     if (empty($name)) {
-        $error_messages[] = "Name is required";
+        $errorMessages[] = "Name is required";
         $error = true;
     }
-    
+
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_messages[] = "Valid email is required";
+        $errorMessages[] = "A valid email is required";
         $error = true;
     }
-    
+
+    if (empty($category)) {
+        $errorMessages[] = "Category is required";
+        $error = true;
+    }
+
     if (empty($subject)) {
-        $error_messages[] = "Subject is required";
+        $errorMessages[] = "Subject is required";
         $error = true;
     }
-    
+
     if (empty($message)) {
-        $error_messages[] = "Message is required";
+        $errorMessages[] = "Message is required";
         $error = true;
     }
-    
-    // Submission date and time
-    $submission_date = date('d/m/Y H:i:s');
+
+    // Date and time of submission
+    $submissionDate = date('d/m/Y H:i:s');
 } else {
-    // If not submitted via POST, redirect to contacts page
+    // If not submitted via POST, redirect to contact page
     header("Location: contacts.php");
     exit();
 }
@@ -44,13 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Processed - Personal Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Message Processed - Personal Site</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -83,11 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body class="gradient-bg">
-    
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                
+
                 <?php if ($error): ?>
                     <!-- Error Card -->
                     <div class="card border-danger shadow-sm mb-4">
@@ -100,8 +112,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="alert alert-danger mb-0">
                                 <h5 class="alert-heading">The following errors were found:</h5>
                                 <ul class="mb-0">
-                                    <?php foreach ($error_messages as $error_msg): ?>
-                                        <li><?php echo $error_msg; ?></li>
+                                    <?php foreach ($errorMessages as $errMsg): ?>
+                                        <li><?php echo $errMsg; ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -117,21 +129,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card border-custom-green shadow-sm mb-4">
                         <div class="card-header custom-green text-white text-center">
                             <h4 class="mb-0">
-                                <i class="bi bi-check-circle"></i> Message Received Successfully!
+                                <i class="bi bi-check-circle"></i> Message Successfully Received!
                             </h4>
                         </div>
                         <div class="card-body">
                             <div class="alert alert-success text-center mb-4" style="background-color: #d4edda; border-color: #2d5a27; color: #155724;">
                                 <p class="mb-0 fs-5">
-                                    <i class="bi bi-envelope-check"></i> Thank you for contacting us! We have received your message and will respond shortly.
+                                    <i class="bi bi-envelope-check"></i> Thank you for your contact! We have received your message and will respond shortly.
                                 </p>
                             </div>
-                            
+
                             <!-- Submitted Data -->
                             <h5 class="mb-3 text-muted">
                                 <i class="bi bi-info-circle"></i> Summary of Submitted Data:
                             </h5>
-                            
+
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="card bg-light">
@@ -143,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6 mb-3">
                                     <div class="card bg-light">
                                         <div class="card-body">
@@ -154,7 +166,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </div>
-                                
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-telephone"></i> Phone
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $phone; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-globe"></i> Website
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $website; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-calendar-event"></i> Preferred Contact Date
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $preferredDate; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-building"></i> Company/Organization
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $company; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-tags"></i> Contact Category
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $category; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-currency-euro"></i> Estimated Budget
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $budget; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-12 mb-3">
                                     <div class="card bg-light">
                                         <div class="card-body">
@@ -165,7 +243,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-12 mb-3">
                                     <div class="card bg-light">
                                         <div class="card-body">
@@ -176,19 +254,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-12">
                                     <div class="card custom-green text-white">
                                         <div class="card-body">
                                             <h6 class="card-title">
-                                                <i class="bi bi-clock"></i> Submission Date and Time
+                                                <i class="bi bi-clock"></i> Submission Date & Time
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $submission_date; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $submissionDate; ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Action Buttons -->
                             <div class="text-center mt-4">
                                 <a href="index-en.php#contacts" class="btn btn-outline-custom-green me-2">
@@ -201,39 +279,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 <?php endif; ?>
-                
-                <!-- Additional Information -->
-                <div class="card border-custom-green shadow-sm">
-                    <div class="card-header custom-green text-white text-center">
-                        <h5 class="mb-0">
-                            <i class="bi bi-lightbulb"></i> Next Steps
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row text-center">
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-1-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Analysis</h6>
-                                <p class="text-muted small">We will analyze your message</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-2-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Response</h6>
-                                <p class="text-muted small">We will respond within 24-48h</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-3-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Follow-up</h6>
-                                <p class="text-muted small">We will follow up on your request</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+
             </div>
         </div>
     </div>
 
-
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

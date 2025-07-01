@@ -6,6 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Receber e sanitizar os dados do formulário
     $nome = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
+
+$phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
+$website = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
+$preferreddate = isset($_POST['preferreddate']) ? htmlspecialchars(trim($_POST['preferreddate'])) : '';
+$company = isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '';
+$category = isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : '';
+$budget = isset($_POST['budget']) ? htmlspecialchars(trim($_POST['budget'])) : '';
+
     $assunto = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $mensagem = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
     
@@ -23,6 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     }
     
+    if (empty($category)) {
+        $mensagens_erro[] = "Categoria é obrigatória";
+        $erro = true;
+    }
+
     if (empty($assunto)) {
         $mensagens_erro[] = "Assunto é obrigatório";
         $erro = true;
@@ -154,7 +167,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     </div>
                                 </div>
-                                
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Telefone
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $phone; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Website
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $website; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Data Preferida para Contacto
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $preferreddate; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Empresa/Organização
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $company; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Categoria do Contacto
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $category; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-custom-green">
+                                                <i class="bi bi-envelope"></i> Orçamento Estimado
+                                            </h6>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $budget; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                               
                                 <div class="col-12 mb-3">
                                     <div class="card bg-light">
                                         <div class="card-body">
@@ -201,35 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 <?php endif; ?>
-                
-                <!-- Informações Adicionais -->
-                <div class="card border-custom-green shadow-sm">
-                    <div class="card-header custom-green text-white text-center">
-                        <h5 class="mb-0">
-                            <i class="bi bi-lightbulb"></i> Próximos Passos
-                        </h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row text-center">
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-1-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Análise</h6>
-                                <p class="text-muted small">Iremos analisar a tua mensagem</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-2-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Resposta</h6>
-                                <p class="text-muted small">Responderemos dentro de 24-48h</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <i class="bi bi-3-circle-fill text-custom-green" style="font-size: 3rem;"></i>
-                                <h6 class="mt-2">Seguimento</h6>
-                                <p class="text-muted small">Daremos seguimento ao teu pedido</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+
             </div>
         </div>
     </div>

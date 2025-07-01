@@ -28,10 +28,9 @@
     </header>
 </body>
 
-
-
 <section id="sobre" class="">
     <div class="sobre-content">
+        <!-- Pegada de Carbono -->
         <div class="sobre-section">
             <h2>O que é a Pegada de Carbono?</h2>
             <p>A Pegada de Carbono representa a quantidade total de gases com efeito de estufa emitidos direta
@@ -52,6 +51,7 @@
             </p>
         </div>
 
+        <!-- Métodos de cálculo -->
         <div class="sobre-section">
             <h2>Métodos de cálculo</h2>
             <p> A Pegada de Carbono é estimada com base em dados como o consumo de combustíveis fósseis, a
@@ -61,6 +61,7 @@
             </p>
         </div>
 
+        <!-- Impacto Ambiental -->
         <div class="sobre-section">
             <h2> Impacto Ambiental</h2>
             <p> O aumento do CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
@@ -70,6 +71,7 @@
             </p>
         </div>
 
+        <!-- Setores -->
         <div class="sobre-section">
             <h2> Setores com a maior Pegada</h2>
             <p> O setor energético é o maior emissor, seguido pela indústria, pelos transportes e pela
@@ -78,6 +80,8 @@
                 hidrogénio verde surge como uma alternativa promissora.
             </p>
         </div>
+
+        <!-- Iniciativas globais -->
         <div class="sobre-section">
             <h2> Iniciativas globais</h2>
             <p>
@@ -92,6 +96,7 @@
             </p>
         </div>
 
+        <!-- Secção 1: Emissões de Transporte -->
         <div class="sobre-section">
             <h2>🚗 Emissões de CO₂ por Meio de Transporte</h2>
             <div class="table-container">
@@ -151,7 +156,10 @@
                     </tbody>
                 </table>
             </div>
+        </div>
 
+        <!-- Secção 2: Consumo Energético -->
+        <div class="sobre-section">
             <h2>⚡ Consumo Energético Doméstico</h2>
             <div class="table-container">
                 <table class="energy-table">
@@ -217,7 +225,10 @@
                     </tbody>
                 </table>
             </div>
+        </div>
 
+        <!-- Secção 3: Dicas Sustentáveis -->
+        <div class="sobre-section">
             <h2>💡 Dicas para Reduzir a Pegada Ecológica</h2>
             <div class="table-container">
                 <table class="tips-table">
@@ -277,13 +288,12 @@
                 </table>
             </div>
         </div>
-        </p>
-    </div>
 
-<?php include 'contactos.php'; ?>
+        <?php include 'contactos.php'; ?>  <!-- contactos -->
 
 </section>
 
+<!-- footer -->
 <?php include 'rodape.php'; ?>
 
 </html>

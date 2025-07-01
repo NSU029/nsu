@@ -1,9 +1,11 @@
 <?php
+// Inicializa variáveis
 $resultado = null;
 $totalAnual = 0;
 
-// CALCULADORA PHP
+// Verifica se o formulário foi submetido via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtém e converte os valores do formulário
     $energia = floatval($_POST['energia'] ?? 0);
     $gas = floatval($_POST['gas'] ?? 0);
     $combustivel = floatval($_POST['combustivel'] ?? 0);
@@ -11,29 +13,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $distancia = floatval($_POST['distancia'] ?? 0);
     $pessoas = floatval($_POST['pessoas'] ?? 1);
 
-    // Fatores de emissão (kg CO₂/unidade)
+    // Define os fatores de emissão (valores em kg de CO₂ por unidade)
     $fatores = [
-        'energia' => 0.233, // kg CO₂ por kWh
-        'gas' => 1.9, // kg CO₂ por m³
-        'combustivel' => 2.3, // kg CO₂ por litro
-        'transporte' => [
-            'carro' => 0.2, // kg CO₂ por km
+        'energia' => 0.233,        // por kWh
+        'gas' => 1.9,              // por m³
+        'combustivel' => 2.3,      // por litro
+        'transporte' => [          // por km, conforme o meio de transporte
+            'carro' => 0.2,
             'moto' => 0.1,
             'publico' => 0.05,
             'bicicleta' => 0
         ]
     ];
 
-    // Cálculos
+    // Cálculo das emissões por categoria
     $emissaoEnergia = $energia * $fatores['energia'];
     $emissaoGas = $gas * $fatores['gas'];
     $emissaoCombustivel = $combustivel * $fatores['combustivel'];
     $emissaoTransporte = $distancia * ($fatores['transporte'][$transporte] ?? 0);
 
+    // Cálculo total mensal por pessoa e anual
     $totalMensal = ($emissaoEnergia + $emissaoGas + $emissaoCombustivel + $emissaoTransporte) / $pessoas;
     $totalAnual = $totalMensal * 12;
 
-    // Classificação
+    // Classificação da pegada com base no total anual
     if ($totalAnual <= 2000) {
         $classe = "Excelente! Pegada muito baixa 🌟";
         $classeCss = "excelente";
@@ -61,11 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $alertClass = "alert-danger";
     }
 
-    // Comparações
-    $arvores = ceil($totalAnual / 22);
-    $kmCarro = ceil($totalAnual / 0.2);
-    $lampadas = ceil($totalAnual / 0.4);
+    // Comparações visuais para melhor compreensão do impacto
+    $arvores = ceil($totalAnual / 22);     // Cada árvore compensa ~22 kg CO₂/ano
+    $kmCarro = ceil($totalAnual / 0.2);    // Equivalente em km percorridos de carro
+    $lampadas = ceil($totalAnual / 0.4);   // Equivalente em lâmpadas incandescentes
 
+    // Armazena o resultado para uso no HTML
     $resultado = [
         'total' => $totalAnual,
         'classe' => $classe,
@@ -78,10 +82,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 }
 
+// Inclui o cabeçalho do site
 include 'cabecalho.php';
 ?>
 
 <main>
+    <!-- Secção de introdução -->
     <section id="inicio" class="inicio">
         <div class="container">
             <h1>Bem-vindo à Calculadora Ambiental</h1>
@@ -91,13 +97,15 @@ include 'cabecalho.php';
         </div>
     </section>
 
-
+    <!-- Inclui a calculadora propriamente dita -->
     <?php include 'calculadora.php'; ?>
 
+    <!-- Inclui as dicas de sustentabilidade -->
     <?php include 'dicas.php'; ?>
 
+    <!-- Inclui a secção de contactos -->
     <?php include 'contactos.php'; ?>
-
 </main>
 
+<!-- Inclui o rodapé do site -->
 <?php include 'rodape.php'; ?>
