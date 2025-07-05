@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p>&copy; 2025 - Calculadora da tua Pegada Ecológica <br> Juntos por um planeta mais sustentável 🌍
+                <p>&copy; 2025 - Your Ecological Footprint Calculator <br> Together for a more sustainable planet 🌍
                 </p>
             </div>
         </div>

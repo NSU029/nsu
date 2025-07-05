@@ -1,11 +1,12 @@
 <?php
-// Inicializa variáveis
+
+$seccao = $_GET['seccao'] ?? 'calculadora';
 $resultado = null;
 $totalAnual = 0;
+$scrollToResults = false; 
 
-// Verifica se o formulário foi submetido via POST
+// SCRIPT PHP DA CALCULADORA
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtém e converte os valores do formulário
     $energia = floatval($_POST['energia'] ?? 0);
     $gas = floatval($_POST['gas'] ?? 0);
     $combustivel = floatval($_POST['combustivel'] ?? 0);
@@ -13,47 +14,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $distancia = floatval($_POST['distancia'] ?? 0);
     $pessoas = floatval($_POST['pessoas'] ?? 1);
 
-    // Define os fatores de emissão (valores em kg de CO₂ por unidade)
+    // Emission factors (kg CO₂/unit)
     $fatores = [
-        'energia' => 0.233,        // por kWh
-        'gas' => 1.9,              // por m³
-        'combustivel' => 2.3,      // por litro
-        'transporte' => [          // por km, conforme o meio de transporte
-            'carro' => 0.2,
+        'energia' => 0.233, // kg CO₂ per kWh
+        'gas' => 1.9, // kg CO₂ per m³
+        'combustivel' => 2.3, // kg CO₂ per liter
+        'transporte' => [
+            'carro' => 0.2, // kg CO₂ per km
             'moto' => 0.1,
             'publico' => 0.05,
             'bicicleta' => 0
         ]
     ];
 
-    // Cálculo das emissões por categoria
+    // Calculations
     $emissaoEnergia = $energia * $fatores['energia'];
     $emissaoGas = $gas * $fatores['gas'];
     $emissaoCombustivel = $combustivel * $fatores['combustivel'];
     $emissaoTransporte = $distancia * ($fatores['transporte'][$transporte] ?? 0);
 
-    // Cálculo total mensal por pessoa e anual
     $totalMensal = ($emissaoEnergia + $emissaoGas + $emissaoCombustivel + $emissaoTransporte) / $pessoas;
     $totalAnual = $totalMensal * 12;
 
-    // Classificação da pegada com base no total anual
+    // Classification
     if ($totalAnual <= 2000) {
         $classe = "Excelente! Pegada muito baixa 🌟";
         $classeCss = "excelente";
         $progressClass = "progress-20";
         $alertClass = "alert-success";
     } elseif ($totalAnual <= 4000) {
-        $classe = "Boa! Pegada baixa 👍";
+        $classe = "Bom! Pegada baixa 👍";
         $classeCss = "boa";
         $progressClass = "progress-40";
         $alertClass = "alert-info";
     } elseif ($totalAnual <= 6000) {
-        $classe = "Moderada. Há espaço para melhorias 🔄";
+        $classe = "Moderada. Há margem para melhorar 🔄";
         $classeCss = "moderada";
         $progressClass = "progress-60";
         $alertClass = "alert-warning";
     } elseif ($totalAnual <= 8000) {
-        $classe = "Alta. Considera mudanças significativas ⚠️";
+        $classe = "Alta. Considere mudanças significativas ⚠️";
         $classeCss = "alta";
         $progressClass = "progress-80";
         $alertClass = "alert-warning";
@@ -64,12 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $alertClass = "alert-danger";
     }
 
-    // Comparações visuais para melhor compreensão do impacto
-    $arvores = ceil($totalAnual / 22);     // Cada árvore compensa ~22 kg CO₂/ano
-    $kmCarro = ceil($totalAnual / 0.2);    // Equivalente em km percorridos de carro
-    $lampadas = ceil($totalAnual / 0.4);   // Equivalente em lâmpadas incandescentes
+    // Comparisons
+    $arvores = ceil($totalAnual / 22);
+    $kmCarro = ceil($totalAnual / 0.2);
+    $lampadas = ceil($totalAnual / 0.4);
 
-    // Armazena o resultado para uso no HTML
     $resultado = [
         'total' => $totalAnual,
         'classe' => $classe,
@@ -80,32 +79,109 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'kmCarro' => $kmCarro,
         'lampadas' => $lampadas
     ];
+
+    // SCROLL RESULTADOS
+    $scrollToResults = true;
 }
 
-// Inclui o cabeçalho do site
+// CABEÇALHO
 include 'cabecalho.php';
 ?>
 
-<main>
-    <!-- Secção de introdução -->
-    <section id="inicio" class="inicio">
-        <div class="container">
-            <h1>Bem-vindo à Calculadora Ambiental</h1>
-            <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
+<main class="mh-container">
 
-            <a href="#calculadora" class="cta-button">Calcular a minha Pegada</a>
-        </div>
-    </section>
+    <?php if ($seccao !== 'sobre'): ?>
 
-    <!-- Inclui a calculadora propriamente dita -->
-    <?php include 'calculadora.php'; ?>
+        <!-- SECÇÃO INICIAL -->
+        <section id="inicio" class="inicio">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <h1>Bem‑vindo à <br> Calculadora Ambiental</h1>
+                        <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
+                        <a href="?seccao=calculadora" class="cta-button">Calcular a Minha Pegada</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Inclui as dicas de sustentabilidade -->
-    <?php include 'dicas.php'; ?>
+    <?php endif; ?>
 
-    <!-- Inclui a secção de contactos -->
-    <?php include 'contactos.php'; ?>
+    <?php if ($seccao == 'calculadora'): ?>
+        <!-- SECÇÃO CALCULADORA -->
+        <section id="calculadora" class="content-section">
+            <div class="container">
+                <?php include_once 'calculadora.php'; ?>
+            </div>
+        </section>
+
+    <?php elseif ($seccao == 'dicas'): ?>
+        <!-- SECÇÃO DICAS -->
+        <section id="dicas" class="content-section">
+            <div class="container">
+                <?php include 'dicas.php'; ?>
+            </div>
+        </section>
+
+    <?php elseif ($seccao == 'contactos'): ?>
+        <!-- SECÇÃO CONTACTOS -->
+        <section id="contactos" class="content-section">
+            <div class="container">
+                <?php include 'contactos.php'; ?>
+            </div>
+        </section>
+
+    <?php elseif ($seccao == 'sobre'): ?>
+        <!-- SECÇÃO SOBRE -->
+        <section id="sobre" class="content-section">
+            <div class="container">
+                <?php include 'sobre.php'; ?>
+            </div>
+        </section>
+
+    <?php endif; ?>
+
 </main>
 
-<!-- Inclui o rodapé do site -->
+<!-- RODAPÉ -->
 <?php include 'rodape.php'; ?>
+
+<!-- SCROLL RESULTADOS -->
+<?php if ($scrollToResults): ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                const resultElement = document.querySelector('.result');
+                if (resultElement) {
+                    // Animação personalizada com easing
+                    function easeInOutQuad(t) {
+                        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                    }
+
+                    const targetPosition = resultElement.getBoundingClientRect().top + window.pageYOffset - 200;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 1000; // 1 segundo
+                    let startTime = null;
+
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        const easedProgress = easeInOutQuad(progress);
+
+                        window.scrollTo(0, startPosition + distance * easedProgress);
+
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+
+                    requestAnimationFrame(animation);
+                }
+            }, 100);
+        });
+    </script>
+
+<?php endif; ?>

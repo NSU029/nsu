@@ -294,7 +294,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <!-- Botões de Ação -->
                             <div class="text-center mt-4">
-                                <a href="index.php#contactos" class="btn btn-outline-custom-green me-2">
+                                <a href="index.php?seccao=contactos" class="btn btn-outline-custom-green me-2">
                                     <i class="bi bi-arrow-left"></i> Voltar aos Contactos
                                 </a>
                                 <a href="index.php" class="btn btn-custom-green">

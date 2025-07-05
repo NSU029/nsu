@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Calculadora Ambiental</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/mobile.css">
-</head>
-
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">🌱 Calculadora Ambiental</div>
-            <ul class="nav-links">
-                <li><a href="index.php#calculadora">Calculadora</a></li>
-                <li><a href="index.php#dicas">Dicas</a></li>
-                <li><a href="sobre.php">Sobre</a></li>
-                <li><a href="#contactos">Contactos</a></li>
-                <li><a href="index-en.php" title="English">
-                        <img src="https://flagcdn.com/gb.svg" alt="UK Flag" width="24" height="16">
-                    </a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
+<section id="inicio" class="inicio">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <h1>Sobre a<br> Calculadora Ambiental</h1>
+                <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
+                <a href="?seccao=calculadora" class="cta-button">Calcular a Minha Pegada</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="sobre" class="">
     <div class="sobre-content">
@@ -69,7 +48,7 @@
             <h2> Impacto Ambiental</h2>
             <p> O aumento do CO₂ intensifica o efeito de estufa e eleva as temperaturas globais, provocando
                 fenómenos climáticos extremos. Os acordos internacionais procuram limitar o aquecimento a
-                1,5–2 °C para evitar consequências graves, como o derretimento dos polos, a acidificação dos
+                1,5–2 °C para evitar consequências graves, como o derretimento dos polos, a acidificação dos
                 oceanos e crises alimentares.
             </p>
         </div>
@@ -90,8 +69,8 @@
             <p>
                 O Acordo de Paris, assinado em 12 de dezembro de 2015 pelas Nações Unidas, serve de referência
                 global para a redução de emissões e define três objetivos principais: manter o aumento da
-                temperatura média global bem abaixo dos 2 °C em relação aos níveis pré-industriais,
-                empenhando-se para limitá-lo a 1,5 °C; reforçar a capacidade de adaptação aos efeitos adversos
+                temperatura média global bem abaixo dos 2 °C em relação aos níveis pré-industriais,
+                empenhando-se para limitá-lo a 1,5 °C; reforçar a capacidade de adaptação aos efeitos adversos
                 das alterações climáticas e promover a resiliência; e assegurar o financiamento necessário para
                 um desenvolvimento de baixas emissões e favorável ao clima. Destaca ainda a origem de políticas
                 regionais e nacionais, nomeadamente o Pacto Ecológico Europeu, que visa alcançar a neutralidade
@@ -291,12 +270,5 @@
                 </table>
             </div>
         </div>
-
-        <?php include 'contactos.php'; ?>  <!-- contactos -->
-
+    </div>
 </section>
-
-<!-- footer -->
-<?php include 'rodape.php'; ?>
-
-</html>

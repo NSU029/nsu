@@ -289,7 +289,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <!-- Action Buttons -->
                             <div class="text-center mt-4">
-                                <a href="index-en.php#contacts" class="btn btn-outline-custom-green me-2">
+                                <a href="index-en.php?seccao=contacts" class="btn btn-outline-custom-green me-2">
                                     <i class="bi bi-arrow-left"></i> Back to Contacts
                                 </a>
                                 <a href="index-en.php" class="btn btn-custom-green">
