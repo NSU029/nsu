@@ -56,46 +56,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Environmental</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
     <style>
+
+        html,
+        body {
+            margin: 0;
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         .custom-green {
             background-color: #2d5a27 !important;
             border-color: #2d5a27 !important;
         }
+
         .text-custom-green {
             color: #2d5a27 !important;
         }
+
         .border-custom-green {
             border-color: #2d5a27 !important;
         }
+
         .btn-custom-green {
             background-color: #2d5a27;
             border-color: #2d5a27;
             color: white;
         }
+
         .btn-outline-custom-green {
             color: #2d5a27;
             border-color: #2d5a27;
             background-color: transparent;
         }
+
         .btn-outline-custom-green:hover {
             background-color: #2d5a27;
             border-color: #2d5a27;
             color: white;
         }
     </style>
+
 </head>
+
 <body class="gradient-bg">
+
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -133,9 +151,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </h4>
                         </div>
                         <div class="card-body">
-                            <div class="alert alert-success text-center mb-4" style="background-color: #d4edda; border-color: #2d5a27; color: #155724;">
+                            <div class="alert alert-success text-center mb-4"
+                                style="background-color: #d4edda; border-color: #2d5a27; color: #155724;">
                                 <p class="mb-0 fs-5">
-                                    <i class="bi bi-envelope-check"></i> Thank you for your contact! We have received your message and will respond shortly.
+                                    <i class="bi bi-envelope-check"></i> Thank you for your contact! We have received your
+                                    message and will respond shortly.
                                 </p>
                             </div>
 
@@ -284,7 +304,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
+
 </html>
