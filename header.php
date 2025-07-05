@@ -389,7 +389,7 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculator';
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand" href="?seccao=calculator">
+            <a class="navbar-brand" href="index-en.php">
                 🌱 Environmental Calculator
             </a>
 
@@ -415,10 +415,10 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculator';
                             href="?seccao=about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="index.php" title="Português">
+                        <a class="nav-link align-items-center" href="index.php" title="Português">
                             <span class="me-2">Português</span>
                             <img src="https://flagcdn.com/pt.svg" alt="Português" width="24" height="16"
-                                class="d-inline-block align-text-top">
+                                class="d-inline-block align-middle">
                         </a>
                     </li>
                 </ul>

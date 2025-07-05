@@ -185,3 +185,20 @@ include 'header.php';
     </script>
 
 <?php endif; ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Verifica se a URL contém o parâmetro 'seccao=calculator'
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('seccao') === 'calculator') {
+    // Seleciona a secção com o ID 'calculadora'
+    const secaoCalculadora = document.getElementById('calculadora');
+    if (secaoCalculadora) {
+      // Aplica o scroll-margin-top de 150px
+      secaoCalculadora.style.scrollMarginTop = '150px';
+      // Realiza o scroll suave até a secção
+      secaoCalculadora.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+</script>

@@ -4,7 +4,7 @@
             <div class="col-12 col-md-8 col-lg-6">
                 <h1>About the <br> Environmental Calculator</h1>
                 <p>A tool to assess and reduce your Ecological Footprint</p>
-                <a href="index-en.php#calculadora" class="cta-button">Calculate My Footprint</a>
+                <a href="?seccao=calculator" class="cta-button">Calculate My Footprint</a>
             </div>
         </div>
     </div>

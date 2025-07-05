@@ -191,7 +191,7 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculadora';
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand" href="?seccao=calculadora">
+            <a class="navbar-brand" href="index.php">
                 🌱 Calculadora Ambiental 
             </a>
 
@@ -215,9 +215,9 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculadora';
                         <a class="nav-link <?php echo ($seccaoAtual == 'sobre') ? 'active' : ''; ?>" href="?seccao=sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center" href="index-en.php" title="English">
+                        <a class="nav-link align-items-center" href="index-en.php" title="English">
                             <span class="me-2">English</span>
-                            <img src="https://flagcdn.com/gb.svg" alt="English" width="24" height="16" class="d-inline-block align-text-top">
+                            <img src="https://flagcdn.com/gb.svg" alt="English" width="24" height="16" class="d-inline-block align-middle">
                         </a>
                     </li>
                 </ul>
