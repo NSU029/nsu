@@ -75,7 +75,7 @@
 
                     <?php if ($resultado): ?>
                         <div class="result">
-                            <h3>A Sua Pegada de Carbono</h3>
+                            <h3>A tua Pegada de Carbono</h3>
                             <div class="value"><?= number_format($resultado['total'], 1) ?> kg CO₂/ano</div>
 
                             <div class="progress-container">
@@ -119,15 +119,15 @@
 
                             <div class="alert <?= $resultado['alertClass'] ?>">
                                 <?php if ($resultado['total'] <= 2000): ?>
-                                    Parabéns! Está no caminho certo para um futuro sustentável.
+                                    Parabéns! Estás no caminho certo para um futuro sustentável.
                                 <?php elseif ($resultado['total'] <= 4000): ?>
-                                    Bom trabalho! Continue a melhorar para reduzir ainda mais a sua pegada.
+                                    Bom trabalho! Continua a melhorar para reduzir ainda mais a tua pegada.
                                 <?php elseif ($resultado['total'] <= 6000): ?>
-                                    Tente reduzir o seu consumo de energia e transporte para diminuir a sua pegada.
+                                    Tenta reduzir o teu consumo de energia e transporte para diminuir a tua pegada.
                                 <?php elseif ($resultado['total'] <= 8000): ?>
-                                    Considere adotar energia renovável e métodos de viagem mais sustentáveis.
+                                    Considera adotar energia renovável e métodos de viagem mais sustentáveis.
                                 <?php else: ?>
-                                    É necessária ação urgente. A sua pegada de carbono está muito alta.
+                                    É necessária ação urgente. A tua pegada de carbono está muito alta.
                                 <?php endif; ?>
                             </div>
                         </div>

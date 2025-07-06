@@ -1,5 +1,5 @@
 <?php
-$seccaoAtual = $_GET['seccao'] ?? 'calculadora';
+$seccaoAtual = $_GET['p'] ?? 'calculadora';
 ?>
 
 <!DOCTYPE html>
@@ -204,15 +204,17 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculadora';
             <!-- LINKS DE NAVEGAÇÃO -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ($seccaoAtual == 'dicas') ? 'active' : ''; ?>" href="?seccao=dicas">Dicas</a>
+                        <a class="nav-link <?php echo ($seccaoAtual == 'dicas') ? 'active' : ''; ?>"
+                            href="?p=dicas">Dicas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ($seccaoAtual == 'contactos') ? 'active' : ''; ?>" href="?seccao=contactos">Contactos</a>
+                        <a class="nav-link <?php echo ($seccaoAtual == 'contactos') ? 'active' : ''; ?>"
+                            href="?p=contactos">Contactos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ($seccaoAtual == 'sobre') ? 'active' : ''; ?>" href="?seccao=sobre">Sobre</a>
+                        <a class="nav-link <?php echo ($seccaoAtual == 'sobre') ? 'active' : ''; ?>"
+                            href="?p=sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link align-items-center" href="index-en.php" title="English">
@@ -224,4 +226,9 @@ $seccaoAtual = $_GET['seccao'] ?? 'calculadora';
             </div>
         </div>
     </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+</html>

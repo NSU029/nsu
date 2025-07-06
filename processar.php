@@ -46,8 +46,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = true;
     }
 
-    // Data e hora do envio
+    // Data e hora do envio no formato dd/mm/yyyy
     $data_envio = date('d/m/Y H:i:s');
+    
+    // Converter data preferida para o formato dd/mm/yyyy se não estiver vazia
+    $preferreddate_formatted = '';
+    if (!empty($preferreddate)) {
+        $date_obj = DateTime::createFromFormat('Y-m-d', $preferreddate);
+        if ($date_obj !== false) {
+            $preferreddate_formatted = $date_obj->format('d/m/Y');
+        } else {
+            $preferreddate_formatted = $preferreddate; // manter original se não conseguir converter
+        }
+    }
 } else {
     // Se não foi enviado via POST, redirecionar para a página de contacto
     header("Location: contactos.php");
@@ -220,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <h6 class="card-title text-custom-green">
                                                 <i class="bi bi-calendar-event"></i> Data Preferida para Contacto
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $preferreddate; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $preferreddate_formatted; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +305,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <!-- Botões de Ação -->
                             <div class="text-center mt-4">
-                                <a href="index.php?seccao=contactos" class="btn btn-outline-custom-green me-2">
+                                <a href="index.php?p=contactos" class="btn btn-outline-custom-green me-2">
                                     <i class="bi bi-arrow-left"></i> Voltar aos Contactos
                                 </a>
                                 <a href="index.php" class="btn btn-custom-green">

@@ -4,7 +4,7 @@
             <div class="col-12 col-md-8 col-lg-6">
                 <h1>Sobre a<br> Calculadora Ambiental</h1>
                 <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
-                <a href="?seccao=calculadora" class="cta-button">Calcular a Minha Pegada</a>
+                <a href="?p=calculadora" class="cta-button">Calcular a Minha Pegada</a>
             </div>
         </div>
     </div>

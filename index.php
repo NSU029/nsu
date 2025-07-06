@@ -1,6 +1,6 @@
 <?php
 
-$seccao = $_GET['seccao'] ?? 'calculadora';
+$seccao = $_GET['p'] ?? 'calculadora';
 $resultado = null;
 $totalAnual = 0;
 $scrollToResults = false; 
@@ -43,17 +43,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $progressClass = "progress-20";
         $alertClass = "alert-success";
     } elseif ($totalAnual <= 4000) {
-        $classe = "Bom! Pegada baixa 👍";
+        $classe = "Boa! Pegada baixa 👍";
         $classeCss = "boa";
         $progressClass = "progress-40";
         $alertClass = "alert-info";
     } elseif ($totalAnual <= 6000) {
-        $classe = "Moderada. Há margem para melhorar 🔄";
+        $classe = "Moderada. Há margem para melhorares 🔄";
         $classeCss = "moderada";
         $progressClass = "progress-60";
         $alertClass = "alert-warning";
     } elseif ($totalAnual <= 8000) {
-        $classe = "Alta. Considere mudanças significativas ⚠️";
+        $classe = "Alta. Considera mudanças significativas ⚠️";
         $classeCss = "alta";
         $progressClass = "progress-80";
         $alertClass = "alert-warning";
@@ -99,7 +99,7 @@ include 'cabecalho.php';
                     <div class="col-12 col-md-8 col-lg-6">
                         <h1>Bem‑vindo à <br> Calculadora Ambiental</h1>
                         <p>Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica</p>
-                        <a href="?seccao=calculadora" class="cta-button">Calcular a Minha Pegada</a>
+                        <a href="?p=calculadora" class="cta-button">Calcular a Minha Pegada</a>
                     </div>
                 </div>
             </div>
@@ -188,16 +188,12 @@ include 'cabecalho.php';
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Verifica se a URL contém o parâmetro 'seccao=calculadora'
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('seccao') === 'calculadora') {
-    // Seleciona a secção com o ID 'calculadora'
-    const secaoCalculadora = document.getElementById('calculadora');
-    if (secaoCalculadora) {
-      // Aplica o scroll-margin-top de 150px
-      secaoCalculadora.style.scrollMarginTop = '150px';
-      // Realiza o scroll suave até a secção
-      secaoCalculadora.scrollIntoView({ behavior: 'smooth' });
+  if (urlParams.get('p') === 'calculadora') {
+    const seccaoCalculadora = document.getElementById('calculadora');
+    if (seccaoCalculadora) {
+      seccaoCalculadora.style.scrollMarginTop = '150px';
+      seccaoCalculadora.scrollIntoView({ behavior: 'smooth' });
     }
   }
 });

@@ -1,6 +1,6 @@
 <?php
 
-$seccao = $_GET['seccao'] ?? 'calculator';
+$seccao = $_GET['p'] ?? 'calculator';
 $resultado = null;
 $totalAnual = 0;
 $scrollToResults = false; 
@@ -99,7 +99,7 @@ include 'header.php';
                 <div class="col-12 col-md-8 col-lg-6">
                     <h1>Welcome to the <br> Environmental Calculator</h1>
                     <p>A tool to assess and reduce your Carbon Footprint</p>
-                    <a href="?seccao=calculator" class="cta-button">Calculate My Footprint</a>
+                    <a href="?p=calculator" class="cta-button">Calculate My Footprint</a>
                 </div>
             </div>
         </div>
@@ -188,16 +188,12 @@ include 'header.php';
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Verifica se a URL contém o parâmetro 'seccao=calculator'
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('seccao') === 'calculator') {
-    // Seleciona a secção com o ID 'calculadora'
-    const secaoCalculadora = document.getElementById('calculadora');
-    if (secaoCalculadora) {
-      // Aplica o scroll-margin-top de 150px
-      secaoCalculadora.style.scrollMarginTop = '150px';
-      // Realiza o scroll suave até a secção
-      secaoCalculadora.scrollIntoView({ behavior: 'smooth' });
+  if (urlParams.get('p') === 'calculator') {
+    const seccaoCalculadora = document.getElementById('calculadora');
+    if (seccaoCalculadora) {
+      seccaoCalculadora.style.scrollMarginTop = '150px';
+      seccaoCalculadora.scrollIntoView({ behavior: 'smooth' });
     }
   }
 });
