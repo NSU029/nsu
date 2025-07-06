@@ -186,15 +186,3 @@ include 'cabecalho.php';
 
 <?php endif; ?>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('p') === 'calculadora') {
-    const seccaoCalculadora = document.getElementById('calculadora');
-    if (seccaoCalculadora) {
-      seccaoCalculadora.style.scrollMarginTop = '150px';
-      seccaoCalculadora.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-});
-</script>

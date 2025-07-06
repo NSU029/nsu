@@ -187,14 +187,37 @@ include 'header.php';
 <?php endif; ?>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('p') === 'calculator') {
-    const seccaoCalculadora = document.getElementById('calculadora');
-    if (seccaoCalculadora) {
-      seccaoCalculadora.style.scrollMarginTop = '150px';
-      seccaoCalculadora.scrollIntoView({ behavior: 'smooth' });
+    function scrollToElement(element, duration = 1500) {
+    const start = window.scrollY;
+    const end = element.getBoundingClientRect().top + window.scrollY - 150; // margem no topo
+    const distance = end - start;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        window.scrollTo(0, start + distance * easeInOutQuad(progress));
+
+        if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+        }
     }
-  }
-});
+
+    function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    requestAnimationFrame(animation);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('p') === 'calculator') {
+        const seccaoCalculadora = document.getElementById('calculadora');
+        if (seccaoCalculadora) {
+        scrollToElement(seccaoCalculadora, 1000); // 1000 ms = 1 segundo
+        }
+    }
+    });
 </script>
