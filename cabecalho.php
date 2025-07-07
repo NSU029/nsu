@@ -56,7 +56,6 @@ $seccaoAtual = $_GET['p'] ?? 'calculadora';
             }
         }
         
-        /* Melhora o foco nos resultados */
         .result:target,
         .result-highlight {
             animation: highlight 2s ease-in-out;

@@ -5,7 +5,6 @@
 
             <div class="contact-form">
                 <form action="process.php" method="POST">
-                    <!-- Personal Information -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">
@@ -88,7 +87,6 @@
                         </div>
                     </div>
 
-                    <!-- Category -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="category">
@@ -121,7 +119,6 @@
 
                     </div>
 
-                    <!-- Subject -->
                     <div class="form-group full-width">
                         <label for="subject">
                             <i class="bi bi-chat-square-text-fill"></i>Subject *
@@ -130,7 +127,6 @@
                             placeholder="What is your message about?" minlength="5" maxlength="100">
                     </div>
 
-                    <!-- Message -->
                     <div class="form-group full-width">
                         <label for="message">
                             <i class="bi bi-card-text"></i>Message *
@@ -144,7 +140,6 @@
                         </div>
                     </div>
 
-                    <!-- Submit Button -->
                     <button type="submit" class="submit-btn">
                         <i class="bi bi-send"></i>
                         Send Message

@@ -5,7 +5,7 @@
 
             <div class="contact-form">
                 <form action="processar.php" method="POST">
-                    <!-- Informações pessoais -->
+                    <!-- Nome -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">
@@ -15,7 +15,7 @@
                                 minlength="2" pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos"
                                 autocomplete="name">
                         </div>
-
+                        <!-- Email -->
                         <div class="form-group">
                             <label for="email">
                                 <i class="bi bi-envelope-fill"></i>Email *
@@ -33,7 +33,7 @@
                             </datalist>
                         </div>
                     </div>
-
+                    <!-- Telefone -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phone">
@@ -43,7 +43,7 @@
                                 pattern="((\+351)?[9][1236][0-9]{7})|([2][0-9]{8})"
                                 title="Telemóvel: 912345678 ou +351912345678 | Fixo: 212345678" autocomplete="tel">
                         </div>
-
+                        <!-- Website -->
                         <div class="form-group">
                             <label for="website">
                                 <i class="bi bi-globe"></i>Website
@@ -52,7 +52,7 @@
                                 autocomplete="url">
                         </div>
                     </div>
-
+                    <!-- Data de contacto -->
                     <div class="form-row">
                         <div class="form-group">
                             <label for="preferreddate">
@@ -60,7 +60,7 @@
                             </label>
                             <input type="date" id="preferreddate" name="preferreddate" min="<?php echo date('Y-m-d'); ?>">
                         </div>
-
+                        <!-- Empresa -->
                         <div class="form-group">
                             <label for="company">
                                 <i class="bi bi-building"></i>Empresa/Organização
@@ -108,7 +108,7 @@
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
-
+                        <!-- Orçamento -->
                         <div class="form-group">
                             <label for="budget">
                                 <i class="bi bi-currency-euro"></i>Orçamento Estimado
@@ -152,7 +152,7 @@
             </div>
         </section>
     </div>
-
+    <!-- Imagens links -->
     <ul class="social">
         <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ruiribeiro29@gmail.com" target="_blank"><img
                     src="img/gmail.png" alt="Gmail"></a></li>

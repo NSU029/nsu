@@ -1,9 +1,8 @@
 <?php
 // processar.php
 
-// Verificar se o formulário foi enviado via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Receber e sanitizar os dados do formulário
+
     $nome = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
 
@@ -61,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Se não foi enviado via POST, redirecionar para a página de contacto
-    header("Location: contactos.php");
+    header("Location: index.php?p=contactos");
     exit();
 }
 ?>

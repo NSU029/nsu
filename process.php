@@ -1,9 +1,8 @@
 <?php
 // process.php
 
-// Check if the form was submitted via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Receive and sanitize form data
+
     $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
 
@@ -56,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($date_obj !== false) {
             $preferredDateFormatted = $date_obj->format('Y/m/d');
         } else {
-            $preferredDateFormatted = $preferredDate; // keep original if cannot convert
+            $preferredDateFormatted = $preferredDate; 
         }
     }
 } else {
     // If not submitted via POST, redirect to contact page
-    header("Location: contacts.php");
+    header("Location: index-en.php?p=contacts");
     exit();
 }
 ?>
