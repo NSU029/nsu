@@ -96,44 +96,44 @@
                         <tr>
                             <td><span class="eco-indicator">🚶‍♂️ A pé</span></td>
                             <td><span class="co2-value co2-low">0</span></td>
-                            <td class="highlight-green">Excelente</td>
+                            <td class="rating">Excelente</td>
                             <td>5 km/dia</td>
-                            <td class="highlight-green">0.0</td>
+                            <td class="highlight-green">0,00</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚲 Bicicleta</span></td>
                             <td><span class="co2-value co2-low">0</span></td>
-                            <td class="highlight-green">Excelente</td>
+                            <td class="rating">Excelente</td>
                             <td>10 km/dia</td>
-                            <td class="highlight-green">0.0</td>
+                            <td class="highlight-green">0,00</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚌 Autocarro</span></td>
                             <td><span class="co2-value co2-medium">89</span></td>
-                            <td>Bom</td>
+                            <td class="rating">Bom</td>
                             <td>20 km/dia</td>
-                            <td>0.65</td>
+                            <td>0,65</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚊 Elétrico/Metro</span></td>
                             <td><span class="co2-value co2-low">45</span></td>
-                            <td class="highlight-green">Muito Bom</td>
+                            <td class="rating">Muito Bom</td>
                             <td>15 km/dia</td>
-                            <td>0.25</td>
+                            <td>0,25</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚗 Carro (gasolina)</span></td>
                             <td><span class="co2-value co2-high">180</span></td>
-                            <td class="highlight-red">Elevado</td>
+                            <td class="rating">Elevado</td>
                             <td>30 km/dia</td>
-                            <td class="highlight-red">1.97</td>
+                            <td class="highlight-red">1,97</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">✈️ Avião (doméstico)</span></td>
                             <td><span class="co2-value co2-high">285</span></td>
-                            <td class="highlight-red">Muito Elevado</td>
+                            <td class="rating">Muito Elevado</td>
                             <td>500 km/mês</td>
-                            <td class="highlight-red">1.71</td>
+                            <td class="highlight-red">1,71</td>
                         </tr>
                     </tbody>
                 </table>
@@ -160,9 +160,9 @@
                             <td>💡 Lâmpada LED</td>
                             <td class="consumption">9</td>
                             <td>5</td>
-                            <td>1.35</td>
+                            <td>1,35</td>
                             <td><span class="efficiency alta">Alta</span></td>
-                            <td class="highlight-green">0.54</td>
+                            <td class="highlight-green">0,54</td>
                         </tr>
                         <tr>
                             <td>❄️ Frigorífico A+++</td>
@@ -170,7 +170,7 @@
                             <td>24</td>
                             <td>108</td>
                             <td><span class="efficiency alta">Alta</span></td>
-                            <td>43.2</td>
+                            <td>43,20</td>
                         </tr>
                         <tr>
                             <td>🖥️ Computador</td>
@@ -178,15 +178,15 @@
                             <td>8</td>
                             <td>72</td>
                             <td><span class="efficiency media">Média</span></td>
-                            <td>28.8</td>
+                            <td>28,80</td>
                         </tr>
                         <tr>
                             <td>📺 TV LED 50"</td>
                             <td class="consumption">120</td>
                             <td>6</td>
-                            <td>21.6</td>
+                            <td>21,6</td>
                             <td><span class="efficiency alta">Alta</span></td>
-                            <td>8.64</td>
+                            <td>8,64</td>
                         </tr>
                         <tr>
                             <td>🔥 Aquecedor elétrico</td>
@@ -194,7 +194,7 @@
                             <td>4</td>
                             <td>240</td>
                             <td><span class="efficiency baixa">Baixa</span></td>
-                            <td class="highlight-red">96.0</td>
+                            <td class="highlight-red">96,00</td>
                         </tr>
                         <tr>
                             <td>👕 Máquina de lavar</td>
@@ -202,7 +202,7 @@
                             <td>1</td>
                             <td>15</td>
                             <td><span class="efficiency media">Média</span></td>
-                            <td>6.0</td>
+                            <td>6,00</td>
                         </tr>
                     </tbody>
                 </table>
@@ -227,48 +227,66 @@
                         <tr>
                             <td>🚲 Usar bicicleta</td>
                             <td><span class="impact alto">Alto</span></td>
-                            <td class="highlight-green">1,500 kg</td>
+                            <td class="highlight-green">1500 kg</td>
                             <td class="difficulty">Fácil</td>
-                            <td class="highlight-green">€1,200</td>
+                            <td class="highlight-green">1200€</td>
                         </tr>
                         <tr>
                             <td>💡 Substituir lâmpadas por LED</td>
                             <td><span class="impact medio">Médio</span></td>
                             <td>200 kg</td>
                             <td class="difficulty">Muito Fácil</td>
-                            <td>€150</td>
+                            <td>150€</td>
                         </tr>
                         <tr>
                             <td>🌱 Dieta vegetariana 3x/semana</td>
                             <td><span class="impact alto">Alto</span></td>
                             <td class="highlight-green">800 kg</td>
                             <td class="difficulty">Moderada</td>
-                            <td>€400</td>
+                            <td>400€</td>
                         </tr>
                         <tr>
                             <td>♻️ Reciclar todo o lixo</td>
                             <td><span class="impact medio">Médio</span></td>
                             <td>300 kg</td>
                             <td class="difficulty">Fácil</td>
-                            <td>€50</td>
+                            <td>50€</td>
                         </tr>
                         <tr>
                             <td>🏠 Isolar termicamente a casa</td>
                             <td><span class="impact alto">Alto</span></td>
-                            <td class="highlight-green">2,000 kg</td>
+                            <td class="highlight-green">2000 kg</td>
                             <td class="difficulty">Difícil</td>
-                            <td class="highlight-green">€800</td>
+                            <td class="highlight-green">800€</td>
                         </tr>
                         <tr>
                             <td>☀️ Instalar painéis solares</td>
                             <td><span class="impact alto">Alto</span></td>
-                            <td class="highlight-green">3,500 kg</td>
+                            <td class="highlight-green">3500 kg</td>
                             <td class="difficulty">Muito Difícil</td>
-                            <td class="highlight-green">€1,500</td>
+                            <td class="highlight-green">1500€</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
+        <div class="sobre-section">
+            <h2>🎥 Vídeo Educativo</h2>
+            <p class="video-description">...</p>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/azXfhNWU4mI?autoplay=1&mute=1" 
+                    title="Vídeo sobre Sustentabilidade" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </div>
 </section>
+
+<script src="js/tables.js"></script>

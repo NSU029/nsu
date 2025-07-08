@@ -56,14 +56,14 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="distancia">Distance traveled per month (km)</label>
+                                    <label for="distancia">Distance Traveled per Month (km)</label>
                                     <input type="number" id="distancia" name="distancia" placeholder="Ex: 1250"
                                         value="<?= htmlspecialchars($_POST['distancia'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pessoas">Number of people in your household</label>
+                                    <label for="pessoas">Family Aggregate</label>
                                     <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1"
                                         value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
                                 </div>

@@ -1,8 +1,11 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 /* Reset e configurações globais */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Outfit", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana; 
   line-height: 1.6; color: #333;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) no-repeat;
   display: flex;
@@ -72,7 +75,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 }
 .section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: #2d5a27; }
 
-/* Calculadora */
+/* ---------------------------- Calculadora ----------------------------*/
 .calculator {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 2rem; border-radius: 15px; margin: 2rem 0;
@@ -103,7 +106,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 }
 .calculate-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3); }
 
-/* Resultados */
+/* Resultados calculadora */
 .result {
   margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white; border-radius: 15px; text-align: center; animation: fadeInUp 0.5s ease;
@@ -111,7 +114,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .result h3 { font-size: 2rem; margin-bottom: 1rem; }
 .result .value { font-size: 3rem; font-weight: bold; margin: 1rem 0; }
 
-/* Classificações */
+/* Classificações calculadora*/
 .classification {
   font-size: 1.2rem; margin: 1rem 0; padding: 1rem;
   border-radius: 10px; font-weight: bold;
@@ -286,6 +289,23 @@ ul.social img {
 }
 ul.social img:hover { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); }
 
+.video-description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 /* Footer */
 footer { background: rgba(45, 90, 39, 0.9); color: white; text-align: center; padding: 2rem 0; margin-top: 3rem; }
 
@@ -314,7 +334,7 @@ footer { background: rgba(45, 90, 39, 0.9); color: white; text-align: center; pa
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== TABELAS ===== */
+/* ==================== TABELAS: ESTRUTURA GERAL ==================== */
 .table-container {
     margin: 30px 0;
     border-radius: 15px;
@@ -327,7 +347,8 @@ footer { background: rgba(45, 90, 39, 0.9); color: white; text-align: center; pa
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 16px;
 }
 
@@ -345,9 +366,16 @@ thead th {
     font-size: 14px;
 }
 
+td, th {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ==================== TABELAS: CORPO ==================== */
 tbody tr {
-    transition: 0.3s ease;
     border-bottom: 1px solid #e8f5e8;
+    transition: 0.3s ease;
 }
 
 tbody tr:nth-child(even) {
@@ -362,110 +390,33 @@ tbody tr:hover {
 }
 
 tbody td {
-    padding: 18px 15px;
+    background-color: #f9f9f9;
+    color: #333;
     border-bottom: 1px solid #e8f5e8;
 }
 
 tbody td:hover {
-    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid #2d5a27;
     border-radius: 8px;
 }
 
-/* ===== ESTILOS ESPECÍFICOS ===== */
-.co2-value,
-.efficiency,
-.impact {
-    font-weight: bold;
-    border-radius: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 12px;
-    padding: 6px 12px;
-    position: relative;
-    color: white;
-}
-
-.transport-table .co2-value {
-    font-size: 14px;
-    padding: 8px 12px;
-}
-
-.co2-low { background: linear-gradient(135deg, #27ae60, #2ecc71); }
-.co2-medium { background: linear-gradient(135deg, #f39c12, #e67e22); }
-.co2-high { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-
-.co2-value::after {
-    position: absolute;
-    bottom: 2px;
-    left: 8px;
-    right: 8px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 2px;
-}
-
-.co2-low::after { width: 30%; background: #2ecc71; }
-.co2-medium::after { width: 60%; background: #f39c12; }
-.co2-high::after { width: 90%; background: #e74c3c; }
-
-.energy-table .consumption {
-    font-weight: bold;
-    color: #2d5016;
-    font-size: 16px;
-}
-
-.efficiency.alta {
-    background: #d5f4e6;
-    color: #27ae60;
-    border: 2px solid #27ae60;
-}
-
-.efficiency.media {
-    background: #fef9e7;
-    color: #f39c12;
-    border: 2px solid #f39c12;
-}
-
-.efficiency.baixa {
-    background: #fadbd8;
-    color: #e74c3c;
-    border: 2px solid #e74c3c;
-}
-
-.tips-table .difficulty {
-    color: #7f8c8d;
+/* ==================== Dificuldade (Difficulty) ==================== */
+.rating, .efficiency, .difficulty {
     font-style: italic;
+    color: #7f8c8d;
 }
 
-.impact.alto { background: linear-gradient(135deg, #27ae60, #2ecc71); }
-.impact.medio { background: linear-gradient(135deg, #f39c12, #e67e22); }
-.impact.baixo { background: linear-gradient(135deg, #3498db, #2980b9); }
-
-.eco-indicator {
-    display: inline-flex;
+/* ==================== Ícones nas Ações (Sustainable Actions) ==================== */
+.sustainable-action {
+    display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 6px;
 }
 
-.leaf-icon { color: #27ae60; font-size: 16px; }
-.warning-icon { color: #e74c3c; font-size: 16px; }
-
-.highlight-green {
-    background: rgba(39, 174, 96, 0.1);
-    border-radius: 8px;
-    font-weight: 600;
-    color: #27ae60;
-}
-
-.highlight-red {
-    background: rgba(231, 76, 60, 0.1);
-    border-radius: 8px;
-    font-weight: 600;
-    color: #e74c3c;
-}
-
-/* ===== ANIMAÇÕES ===== */
+/* ==================== Animações ==================== */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
 }
+

@@ -11,7 +11,7 @@
                             <label for="name">
                                 <i class="bi bi-person-fill"></i>Nome Completo *
                             </label>
-                            <input type="text" id="name" name="name" required placeholder="Digite o seu nome completo"
+                            <input type="text" id="name" name="name" required placeholder="Digita o teu nome completo"
                                 minlength="2" pattern="[A-Za-zÀ-ÿ\s]+" title="Apenas letras e espaços são permitidos"
                                 autocomplete="name">
                         </div>
@@ -113,9 +113,9 @@
                             <label for="budget">
                                 <i class="bi bi-currency-euro"></i>Orçamento Estimado
                             </label>
-                            <input type="range" id="budget" name="budget" min="500" max="50000" value="2500" step="500"
-                                oninput="this.nextElementSibling.textContent = '€' + this.value">
-                            <output>€2500</output>
+                            <input type="range" id="budget" name="budget" min="0" max="10000" value="100" step="50"
+                                oninput="this.nextElementSibling.textContent = this.value + '€'">
+                            <output>0€</output>
                         </div>
 
                     </div>

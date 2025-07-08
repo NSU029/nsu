@@ -85,42 +85,42 @@
                         <tr>
                             <td><span class="eco-indicator">🚶‍♂️ On Foot</span></td>
                             <td><span class="co2-value co2-low">0</span></td>
-                            <td class="highlight-green">Excellent</td>
+                            <td class="rating">Excellent</td>
                             <td>5 km/day</td>
                             <td class="highlight-green">0.0</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚲 Bicycle</span></td>
                             <td><span class="co2-value co2-low">0</span></td>
-                            <td class="highlight-green">Excellent</td>
+                            <td class="rating">Excellent</td>
                             <td>10 km/day</td>
                             <td class="highlight-green">0.0</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚌 Bus</span></td>
                             <td><span class="co2-value co2-medium">89</span></td>
-                            <td>Good</td>
+                            <td class="rating">Good</td>
                             <td>20 km/day</td>
                             <td>0.65</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚊 Tram/Metro</span></td>
                             <td><span class="co2-value co2-low">45</span></td>
-                            <td class="highlight-green">Very Good</td>
+                           <td class="rating">Very Good</td>
                             <td>15 km/day</td>
                             <td>0.25</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">🚗 Car (petrol)</span></td>
                             <td><span class="co2-value co2-high">180</span></td>
-                            <td class="highlight-red">High</td>
+                            <td class="rating">High</td>
                             <td>30 km/day</td>
                             <td class="highlight-red">1.97</td>
                         </tr>
                         <tr>
                             <td><span class="eco-indicator">✈️ Plane (domestic)</span></td>
                             <td><span class="co2-value co2-high">285</span></td>
-                            <td class="highlight-red">Very High</td>
+                            <td class="rating">Very High</td>
                             <td>500 km/month</td>
                             <td class="highlight-red">1.71</td>
                         </tr>
@@ -214,9 +214,9 @@
                         <tr>
                             <td>🚲 Use a bicycle</td>
                             <td><span class="impact alto">High</span></td>
-                            <td class="highlight-green">1,500 kg</td>
+                            <td class="highlight-green">1500 kg</td>
                             <td class="difficulty">Easy</td>
-                            <td class="highlight-green">€1,200</td>
+                            <td class="highlight-green">€1200</td>
                         </tr>
                         <tr>
                             <td>💡 Replace bulbs with LEDs</td>
@@ -242,20 +242,38 @@
                         <tr>
                             <td>🏠 Thermally insulate your home</td>
                             <td><span class="impact alto">High</span></td>
-                            <td class="highlight-green">2,000 kg</td>
+                            <td class="highlight-green">2000 kg</td>
                             <td class="difficulty">Difficult</td>
                             <td class="highlight-green">€800</td>
                         </tr>
                         <tr>
                             <td>☀️ Install solar panels</td>
                             <td><span class="impact alto">High</span></td>
-                            <td class="highlight-green">3,500 kg</td>
+                            <td class="highlight-green">3500 kg</td>
                             <td class="difficulty">Very Difficult</td>
-                            <td class="highlight-green">€1,500</td>
+                            <td class="highlight-green">€1500</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
+        <div class="sobre-section">
+            <h2>🎥 Educational video</h2>
+            <p class="video-description">...</p>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/azXfhNWU4mI?autoplay=1&mute=1" 
+                    title="Vídeo sobre Sustentabilidade" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </div>
 </section>
+
+<script src="js/tables.js"></script>

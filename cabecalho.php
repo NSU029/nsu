@@ -181,10 +181,17 @@ $seccaoAtual = $_GET['p'] ?? 'calculadora';
             ul.social {gap: 0;}
             footer {font-size: 0.7rem; padding: 1.5rem 0;}
         }
+
+        @media (max-width: 768px) {
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+        }
+}
     </style>
 
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 
     <!-- NAVBAR BOOTSTRAP -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
@@ -225,6 +232,3 @@ $seccaoAtual = $_GET['p'] ?? 'calculadora';
             </div>
         </div>
     </nav>
-
-</body>
-</html>

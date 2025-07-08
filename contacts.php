@@ -112,9 +112,9 @@
                             <label for="budget">
                                 <i class="bi bi-currency-euro"></i>Estimated Budget
                             </label>
-                            <input type="range" id="budget" name="budget" min="500" max="50000" value="2500" step="500"
-                                oninput="this.nextElementSibling.textContent = '€' + this.value">
-                            <output>€2500</output>
+                            <input type="range" id="budget" name="budget" min="0" max="10000" value="100" step="50"
+                                oninput="this.nextElementSibling.textContent = this.value + '€'">
+                            <output>0€</output>
                         </div>
 
                     </div>

@@ -3,7 +3,7 @@ $seccaoAtual = $_GET['p'] ?? 'calculator';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -181,6 +181,13 @@ $seccaoAtual = $_GET['p'] ?? 'calculator';
             ul.social {gap: 0;}
             footer {font-size: 0.7rem; padding: 1.5rem 0;}
         }
+
+        @media (max-width: 768px) {
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+        }
+}
     </style>
 
 </head>
@@ -227,4 +234,3 @@ $seccaoAtual = $_GET['p'] ?? 'calculator';
             </div>
         </div>
     </nav>
-</body>
