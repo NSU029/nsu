@@ -8,6 +8,7 @@ $seccaoAtual = $_GET['p'] ?? 'calculadora';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma ferramenta para avaliares e reduzires a tua Pegada Ecológica">
 
     <title>Calculadora Ambiental</title>
 
@@ -225,7 +226,7 @@ $seccaoAtual = $_GET['p'] ?? 'calculadora';
                     <li class="nav-item">
                         <a class="nav-link align-items-center" href="index-en.php" title="English">
                             <span class="me-2">English</span>
-                            <img src="https://flagcdn.com/gb.svg" alt="English" width="24" height="16" class="d-inline-block align-middle">
+                            <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24" height="16" class="d-inline-block align-middle">
                         </a>
                     </li>
                 </ul>

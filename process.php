@@ -1,5 +1,5 @@
 <?php
-// process.php
+date_default_timezone_set('Europe/Lisbon');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
     $website = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
-    $preferredDate = isset($_POST['preferreddate']) ? htmlspecialchars(trim($_POST['preferreddate'])) : '';
+    $preferredDate = isset($_POST['preferreddate']) ? trim($_POST['preferreddate']) : '';
     $company = isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '';
     $category = isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : '';
     $budget = isset($_POST['budget']) ? htmlspecialchars(trim($_POST['budget'])) : '';
@@ -16,61 +16,108 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
-    // Validate that all required fields are filled
+    // Field validation
     $error = false;
     $errorMessages = [];
 
-    if (empty($name)) {
+    if (empty($name))
         $errorMessages[] = "Name is required";
-        $error = true;
-    }
-
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL))
         $errorMessages[] = "A valid email is required";
-        $error = true;
-    }
-
-    if (empty($category)) {
+    if (empty($category))
         $errorMessages[] = "Category is required";
-        $error = true;
-    }
-
-    if (empty($subject)) {
+    if (empty($subject))
         $errorMessages[] = "Subject is required";
-        $error = true;
-    }
-
-    if (empty($message)) {
+    if (empty($message))
         $errorMessages[] = "Message is required";
-        $error = true;
-    }
 
-    // Date and time of submission in yyyy/mm/dd format
-    $submissionDate = date('Y/m/d H:i:s');
-    
-    // Convert preferred date to yyyy/mm/dd format if not empty
-    $preferredDateFormatted = '';
+    // Format preferred date
+    $preferredDateDb = null;
     if (!empty($preferredDate)) {
-        $date_obj = DateTime::createFromFormat('Y-m-d', $preferredDate);
-        if ($date_obj !== false) {
-            $preferredDateFormatted = $date_obj->format('Y/m/d');
-        } else {
-            $preferredDateFormatted = $preferredDate; 
+        $dateObj = DateTime::createFromFormat('Y-m-d', $preferredDate);
+        if ($dateObj !== false) {
+            $preferredDateDb = $dateObj->format('Y-m-d');
         }
     }
+
+    $submissionDate = date('Y-m-d H:i:s');
+
+    // Database connection
+    $hostname = "sql107.infinityfree.com";
+    $username = "if0_39469160";
+    $password = "5Xpw8Wlmb4";
+    $database = "if0_39469160_calculadora_ambiental";
+
+    $conn = mysqli_connect($hostname, $username, $password, $database);
+    if (!$conn)
+        die("Connection error: " . mysqli_connect_error());
+
+    $conn->set_charset("utf8mb4");
+
+    // Insert data
+    $stmt = $conn->prepare("
+        INSERT INTO contactos 
+        (nome, email, telefone, website, data_preferida, empresa, categoria, orcamento, assunto, mensagem, data_envio) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
+    $stmt->bind_param(
+        "sssssssssss",
+        $name,
+        $email,
+        $phone,
+        $website,
+        $preferredDateDb,
+        $company,
+        $category,
+        $budget,
+        $subject,
+        $message,
+        $submissionDate
+    );
+
+    if ($stmt->execute()) {
+
+        // ---------- Send Email ----------
+        $to = "nessuino29@gmail.com";
+        $emailSubject = "New form submission on the site";
+
+        $body = "You have received a new submission:\n\n";
+        $body .= "Name: $name\n";
+        $body .= "Email: $email\n";
+        $body .= "Phone: $phone\n";
+        $body .= "Website: $website\n";
+        $body .= "Preferred Date: $preferredDateDb\n";
+        $body .= "Company: $company\n";
+        $body .= "Category: $category\n";
+        $body .= "Budget: $budget\n";
+        $body .= "Subject: $subject\n";
+        $body .= "Message:\n$message\n\n";
+        $body .= "Submission Date: $submissionDate\n";
+
+        $headers = "From: noreply@yourwebsite.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+        // You still need to call mail($to, $emailSubject, $body, $headers);
+    }
+
+    $stmt->close();
+    $conn->close();
+
 } else {
-    // If not submitted via POST, redirect to contact page
-    header("Location: index-en.php?p=contacts");
+    // Redirect to contact page if not POST
+    header("Location: index.php?p=contactos");
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Environmental</title>
+    <title>Environmental Calculator</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -78,7 +125,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 
     <style>
-
         html,
         body {
             margin: 0;

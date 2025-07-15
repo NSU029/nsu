@@ -24,10 +24,11 @@ function scrollToElement(element, duration = 1500) {
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const p = urlParams.get("p");
-  // todos os valores possíveis para as versões PT e EN
+  
   const targets = { calculadora: "calculadora", calculator: "calculadora" };
   if (p && targets[p]) {
     const el = document.getElementById(targets[p]);
     if (el) scrollToElement(el, 1000);
   }
 });
+

@@ -146,10 +146,4 @@ include 'cabecalho.php';
 <!-- RODAPÉ -->
 <?php include 'rodape.php'; ?>
 
-<!-- SCROLL RESULTADOS -->
-<?php if ($scrollToResults): ?>
-
-    <script src="js/scroll_to_results.js"></script>
-
-<?php endif; ?>
 

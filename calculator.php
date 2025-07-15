@@ -9,7 +9,7 @@
                 </p>
 
                 <div class="calculator">
-                    <form method="POST" action="#calculadora">
+                    <form method="POST" action="#calculator">
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
@@ -132,6 +132,7 @@
                             </div>
                         </div>
                     <?php endif; ?>
+
                 </div>
             </div>
         </div>

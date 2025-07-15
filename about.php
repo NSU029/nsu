@@ -257,23 +257,6 @@
                 </table>
             </div>
         </div>
-
-        <div class="sobre-section">
-            <h2>🎥 Educational video</h2>
-            <p class="video-description">...</p>
-            <div class="video-container">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/azXfhNWU4mI?autoplay=1&mute=1" 
-                    title="Vídeo sobre Sustentabilidade" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
     </div>
 </section>
 
-<script src="js/tables.js"></script>

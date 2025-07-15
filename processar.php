@@ -1,5 +1,5 @@
 <?php
-// processar.php
+date_default_timezone_set('Europe/Lisbon');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
     $website = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
-    $preferreddate = isset($_POST['preferreddate']) ? htmlspecialchars(trim($_POST['preferreddate'])) : '';
+    $preferreddate = isset($_POST['preferreddate']) ? trim($_POST['preferreddate']) : '';
     $company = isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '';
     $category = isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : '';
     $budget = isset($_POST['budget']) ? htmlspecialchars(trim($_POST['budget'])) : '';
@@ -16,50 +16,79 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assunto = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $mensagem = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
-    // Validar se todos os campos foram preenchidos
+    // validação de campos
     $erro = false;
     $mensagens_erro = [];
 
-    if (empty($nome)) {
+    if (empty($nome))
         $mensagens_erro[] = "Nome é obrigatório";
-        $erro = true;
-    }
-
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL))
         $mensagens_erro[] = "Email válido é obrigatório";
-        $erro = true;
-    }
-
-    if (empty($category)) {
+    if (empty($category))
         $mensagens_erro[] = "Categoria é obrigatória";
-        $erro = true;
-    }
-
-    if (empty($assunto)) {
+    if (empty($assunto))
         $mensagens_erro[] = "Assunto é obrigatório";
-        $erro = true;
-    }
-
-    if (empty($mensagem)) {
+    if (empty($mensagem))
         $mensagens_erro[] = "Mensagem é obrigatória";
-        $erro = true;
-    }
 
-    // Data e hora do envio no formato dd/mm/yyyy
-    $data_envio = date('d/m/Y H:i:s');
-    
-    // Converter data preferida para o formato dd/mm/yyyy se não estiver vazia
-    $preferreddate_formatted = '';
+    // Formatar data
+    $preferreddate_db = null;
     if (!empty($preferreddate)) {
         $date_obj = DateTime::createFromFormat('Y-m-d', $preferreddate);
         if ($date_obj !== false) {
-            $preferreddate_formatted = $date_obj->format('d/m/Y');
-        } else {
-            $preferreddate_formatted = $preferreddate; // manter original se não conseguir converter
+            $preferreddate_db = $date_obj->format('Y-m-d');
         }
     }
+
+    $data_envio = date('Y-m-d H:i:s');
+
+    // Conexão à base de dados
+    $hostname = "sql107.infinityfree.com";
+    $username = "if0_39469160";
+    $password = "5Xpw8Wlmb4";
+    $database = "if0_39469160_calculadora_ambiental";
+
+    $conn = mysqli_connect($hostname, $username, $password, $database);
+    if (!$conn)
+        die("Erro de conexão: " . mysqli_connect_error());
+
+    $conn->set_charset("utf8mb4");
+
+    // Inserir dados
+    $stmt = $conn->prepare("INSERT INTO contactos (nome, email, telefone, website, data_preferida, empresa, categoria, orcamento, assunto, mensagem, data_envio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssss", $nome, $email, $phone, $website, $preferreddate_db, $company, $category, $budget, $assunto, $mensagem, $data_envio);
+
+    if ($stmt->execute()) {
+
+        // ---------- Enviar Email ----------
+        $para = "nessuino29@gmail.com";
+        $assunto_email = "Nova submissão de formulário no site";
+
+        $corpo = "Recebeste uma nova submissão:\n\n";
+        $corpo .= "Nome: $nome\n";
+        $corpo .= "Email: $email\n";
+        $corpo .= "Telefone: $phone\n";
+        $corpo .= "Website: $website\n";
+        $corpo .= "Data Preferida: $preferreddate_db\n";
+        $corpo .= "Empresa: $company\n";
+        $corpo .= "Categoria: $category\n";
+        $corpo .= "Orçamento: $budget\n";
+        $corpo .= "Assunto: $assunto\n";
+        $corpo .= "Mensagem:\n$mensagem\n\n";
+        $corpo .= "Data de envio: $data_envio\n";
+
+        $headers = "From: noreply@teusite.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+        // -----------------------------------
+    }
+
+    $stmt->close();
+    $conn->close();
+
 } else {
-    // Se não foi enviado via POST, redirecionar para a página de contacto
+    // Redirecionar para página de contactos se erro via POST
     header("Location: index.php?p=contactos");
     exit();
 }
@@ -69,7 +98,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Ambiental</title>
@@ -79,18 +107,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <style>
 
+    <style>
         html,
         body {
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
         }
 
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
         }
 
         .custom-green {

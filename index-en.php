@@ -111,7 +111,7 @@ include 'header.php';
         <!-- CALCULATOR SECTION -->
         <section id="calculadora" class="content-section">
             <div class="container">
-                <?php include_once 'calculator.php'; ?>
+               <?php include_once 'calculator.php'; ?> 
             </div>
         </section>
 
@@ -146,12 +146,7 @@ include 'header.php';
 <!-- FOOTER -->
 <?php include 'footer.php'; ?>
 
-<!-- SCROLL RESULTADOS -->
-<?php if ($scrollToResults): ?>
 
-    <script src="js/scroll_to_results.js"></script>
-
-<?php endif; ?>
 
 
 

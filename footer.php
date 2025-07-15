@@ -14,7 +14,7 @@
     crossorigin="anonymous">
 </script>
 
-<script src="js/scroll_to_calculator.js"></script>
+<script src="js/nsu.js"></script>
 
 </body>
 
