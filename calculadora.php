@@ -14,14 +14,14 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="energia">Consumo de Eletricidade (kWh/mês)</label>
-                                    <input type="number" id="energia" name="energia" placeholder="Ex: 300"
-                                        value="<?= htmlspecialchars($_POST['energia'] ?? '') ?>" required>
+                                    <input type="number" id="energia" name="energia" placeholder="Ex: 300" min="0"
+                                        step="0.01" value="<?= htmlspecialchars($_POST['energia'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="gas">Consumo de Gás (m³/mês)</label>
-                                    <input type="number" id="gas" name="gas" placeholder="Ex: 60"
+                                    <input type="number" id="gas" name="gas" placeholder="Ex: 60" min="0" step="0.01"
                                         value="<?= htmlspecialchars($_POST['gas'] ?? '') ?>" required>
                                 </div>
                             </div>
@@ -30,9 +30,9 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="combustivel">Consumo de Combustível (litros/mês)</label>
-                                    <input type="number" id="combustivel" name="combustivel" placeholder="Ex: 80"
-                                        value="<?= htmlspecialchars($_POST['combustivel'] ?? '') ?>" required>
+                                    <label for="pessoas">Agregado Familiar</label>
+                                    <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1"
+                                        step="1" value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
@@ -57,15 +57,15 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="distancia">Distância Percorrida por Mês (km)</label>
-                                    <input type="number" id="distancia" name="distancia" placeholder="Ex: 1250"
-                                        value="<?= htmlspecialchars($_POST['distancia'] ?? '') ?>" required>
+                                    <input type="number" id="distancia" name="distancia" placeholder="Ex: 1250" min="0"
+                                        step="0.01" value="<?= htmlspecialchars($_POST['distancia'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pessoas">Agregado Familiar</label>
-                                    <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1"
-                                        value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
+                                    <label for="combustivel">Consumo de Combustível (litros/mês)</label>
+                                    <input type="number" id="combustivel" name="combustivel" placeholder="Ex: 80"
+                                        min="0" step="0.01" value="<?= htmlspecialchars($_POST['combustivel'] ?? '') ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,6 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    
                 </div>
             </div>
         </div>

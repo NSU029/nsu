@@ -1,4 +1,4 @@
-<!-- SECÇÃO CALCULADORA -->
+<!-- CALCULATOR SECTION -->
 <section id="calculadora" class="section">
     <div class="container">
         <div class="row justify-content-center">
@@ -14,14 +14,14 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="energia">Electricity Consumption (kWh/month)</label>
-                                    <input type="number" id="energia" name="energia" placeholder="Ex: 300"
+                                    <input type="number" id="energia" name="energia" placeholder="Ex: 300" min="0" step="0.01"
                                         value="<?= htmlspecialchars($_POST['energia'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="gas">Gas Consumption (m³/month)</label>
-                                    <input type="number" id="gas" name="gas" placeholder="Ex: 60"
+                                    <input type="number" id="gas" name="gas" placeholder="Ex: 60" min="0" step="0.01"
                                         value="<?= htmlspecialchars($_POST['gas'] ?? '') ?>" required>
                                 </div>
                             </div>
@@ -30,14 +30,14 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="combustivel">Fuel Consumption (liters/month)</label>
-                                    <input type="number" id="combustivel" name="combustivel" placeholder="Ex: 80"
-                                        value="<?= htmlspecialchars($_POST['combustivel'] ?? '') ?>" required>
+                                    <label for="pessoas">Household Members</label>
+                                    <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1" step="1"
+                                        value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="transporte">Main Type of Transport</label>
+                                    <label for="transporte">Main Transportation Method</label>
                                     <select id="transporte" name="transporte" required>
                                         <option value="">Select...</option>
                                         <option value="carro" <?= ($_POST['transporte'] ?? '') === 'carro' ? 'selected' : '' ?>>
@@ -45,7 +45,7 @@
                                         <option value="moto" <?= ($_POST['transporte'] ?? '') === 'moto' ? 'selected' : '' ?>>
                                             Motorcycle</option>
                                         <option value="publico" <?= ($_POST['transporte'] ?? '') === 'publico' ? 'selected' : '' ?>>
-                                            Public Transport</option>
+                                            Public Transportation</option>
                                         <option value="bicicleta" <?= ($_POST['transporte'] ?? '') === 'bicicleta' ? 'selected' : '' ?>>
                                             Bicycle or Walking</option>
                                     </select>
@@ -57,15 +57,15 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="distancia">Distance Traveled per Month (km)</label>
-                                    <input type="number" id="distancia" name="distancia" placeholder="Ex: 1250"
+                                    <input type="number" id="distancia" name="distancia" placeholder="Ex: 1250" min="0" step="0.01"
                                         value="<?= htmlspecialchars($_POST['distancia'] ?? '') ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="pessoas">Family Aggregate</label>
-                                    <input type="number" id="pessoas" name="pessoas" placeholder="Ex: 3" min="1"
-                                        value="<?= htmlspecialchars($_POST['pessoas'] ?? '') ?>" required>
+                                    <label for="combustivel">Fuel Consumption (liters/month)</label>
+                                    <input type="number" id="combustivel" name="combustivel" placeholder="Ex: 80" min="0" step="0.01"
+                                        value="<?= htmlspecialchars($_POST['combustivel'] ?? '') ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -103,14 +103,14 @@
                                     <div class="col-12 col-md-4">
                                         <div class="comparison-item">
                                             <span class="icon">🚗</span>
-                                            <div>Car km</div>
+                                            <div>Car kilometers</div>
                                             <strong><?= number_format($resultado['kmCarro']) ?></strong>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <div class="comparison-item">
                                             <span class="icon">💡</span>
-                                            <div>60W lightbulb (h)</div>
+                                            <div>60W Bulb (hours)</div>
                                             <strong><?= number_format($resultado['lampadas']) ?></strong>
                                         </div>
                                     </div>
@@ -119,20 +119,19 @@
 
                             <div class="alert <?= $resultado['alertClass'] ?>">
                                 <?php if ($resultado['total'] <= 2000): ?>
-                                    Congratulations! You are on the right path for a sustainable future.
+                                    Congratulations! You're on the right path to a sustainable future.
                                 <?php elseif ($resultado['total'] <= 4000): ?>
-                                    Good job! Keep improving to reduce your footprint even further.
+                                    Good job! Keep improving to reduce your footprint even more.
                                 <?php elseif ($resultado['total'] <= 6000): ?>
-                                    Try to reduce your energy and transport consumption to lower your footprint.
+                                    Try to reduce your energy consumption and transportation to lower your footprint.
                                 <?php elseif ($resultado['total'] <= 8000): ?>
                                     Consider adopting renewable energy and more sustainable travel methods.
                                 <?php else: ?>
-                                    Urgent action is necessary. Your carbon footprint is very high.
+                                    Urgent action is needed. Your carbon footprint is very high.
                                 <?php endif; ?>
                             </div>
                         </div>
-                    <?php endif; ?>
-
+                    <?php endif; ?>                    
                 </div>
             </div>
         </div>
