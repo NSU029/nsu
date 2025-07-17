@@ -5,6 +5,7 @@
 
             <div class="contact-form">
                 <form action="process.php" method="POST">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">
@@ -45,7 +46,7 @@
 
                         <div class="form-group">
                             <label for="website">
-                                <i class="bi bi-globe"></i>Website
+                                <i class="bi bi-globe"></i>Website/Portfolio
                             </label>
                             <input type="url" id="website" name="website" placeholder="https://www.example.com"
                                 autocomplete="url">
@@ -63,29 +64,29 @@
 
                         <div class="form-group">
                             <label for="company">
-                                <i class="bi bi-building"></i>Company/Organization
+                                <i class="bi bi-building"></i>Company/University
                             </label>
                             <input type="text" id="company" name="company" placeholder="Your company name"
                                 list="company-suggestions" autocomplete="organization">
                             <datalist id="company-suggestions">
-                                <option value="Altri">
                                 <option value="APA - Portuguese Environment Agency">
                                 <option value="Independent Consultant">
-                                <option value="CTT - Portuguese Postal Service">
-                                <option value="Ecoprogresso">
                                 <option value="EDP Renováveis">
+                                <option value="FCUP">
+                                <option value="FEP">
+                                <option value="FEUP">
+                                <option value="FMUP">
                                 <option value="Galp Energia">
-                                <option value="Greenvolt">
+                                <option value="ICBAS">
                                 <option value="Jerónimo Martins">
                                 <option value="Lipor">
                                 <option value="QUERCUS">
                                 <option value="Sonae">
-                                <option value="The Navigator Company">
-                                <option value="Zero - Terrestrial Sustainable System Association">
                                 <option value="Other / Freelancer">
                             </datalist>
                         </div>
                     </div>
+
 
                     <div class="form-row">
                         <div class="form-group">
@@ -93,30 +94,42 @@
                                 <i class="bi bi-tags-fill"></i>Contact Category *
                             </label>
                             <select id="category" name="category" required>
-                                <option value=""disabled selected>Select a category</option>
-                                <option value="carbon-footprint-calculation">Carbon Footprint Calculation</option>
-                                <option value="environmental-audit">Environmental Audit</option>
-                                <option value="environmental-certification">Environmental Certification</option>
-                                <option value="environmental-training">Environmental Training</option>
-                                <option value="green-project-partnership">Green Project Partnership</option>
-                                <option value="green-technology">Green Technology</option>
-                                <option value="sustainable-investment">Sustainable Investment</option>
-                                <option value="sustainability-consulting">Sustainability Consulting</option>
-                                <option value="sustainability-report">Sustainability Report</option>
-
-                                <option value="other">Other</option>
+                                <option value="" disabled selected>Select contact type</option>
+                                <option value="duvida-projeto">Question about the Project</option>
+                                <option value="colaboracao-academica">Academic Collaboration</option>
+                                <option value="partilha-dados">Data/Results Sharing</option>
+                                <option value="feedback-calculadora">Calculator Feedback</option>
+                                <option value="sugestao-melhoria">Improvement Suggestion</option>
+                                <option value="pedido-apresentacao">Presentation Request</option>
+                                <option value="questao-tecnica">Technical Question</option>
+                                <option value="oportunidade-estagio">Internship Opportunity</option>
+                                <option value="networking-estudantes">Student Networking</option>
+                                <option value="outro">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="budget">
-                                <i class="bi bi-currency-euro"></i>Estimated Budget
+                                <i class="bi bi-calendar-week"></i> Academic Background
                             </label>
-                            <input type="range" id="budget" name="budget" min="0" max="10000" value="100" step="50"
-                                oninput="this.nextElementSibling.textContent = this.value + '€'">
-                            <output>0€</output>
-                        </div>
+                            <input type="range" id="budget" name="budget" min="0" max="5" value="5" step="1"
+                                oninput="updateYearDisplay(this.value)">
+                            <output id="year-output">Worker</output>
 
+                            <script>
+                                function updateYearDisplay(value) {
+                                    const years = {
+                                        '0': 'No Academic Background',
+                                        '1': 'Bachelor’s Degree',
+                                        '2': 'Master’s/Postgraduate',
+                                        '3': 'PhD',
+                                        '4': 'Postdoctoral',
+                                        '5': 'Worker'
+                                    };
+                                    document.getElementById('year-output').textContent = years[value];
+                                }
+                            </script>
+                        </div>
                     </div>
 
                     <div class="form-group full-width">

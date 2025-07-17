@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
     $website = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
-    $preferredDate = isset($_POST['preferreddate']) ? trim($_POST['preferreddate']) : '';
+    $preferreddate = isset($_POST['preferreddate']) ? trim($_POST['preferreddate']) : '';
     $company = isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '';
     $category = isset($_POST['category']) ? htmlspecialchars(trim($_POST['category'])) : '';
     $budget = isset($_POST['budget']) ? htmlspecialchars(trim($_POST['budget'])) : '';
@@ -16,31 +16,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
-    // Field validation
+    // field validation
     $error = false;
-    $errorMessages = [];
+    $error_messages = [];
 
     if (empty($name))
-        $errorMessages[] = "Name is required";
+        $error_messages[] = "Name is required";
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL))
-        $errorMessages[] = "A valid email is required";
+        $error_messages[] = "Valid email is required";
     if (empty($category))
-        $errorMessages[] = "Category is required";
+        $error_messages[] = "Category is required";
     if (empty($subject))
-        $errorMessages[] = "Subject is required";
+        $error_messages[] = "Subject is required";
     if (empty($message))
-        $errorMessages[] = "Message is required";
+        $error_messages[] = "Message is required";
 
-    // Format preferred date
-    $preferredDateDb = null;
-    if (!empty($preferredDate)) {
-        $dateObj = DateTime::createFromFormat('Y-m-d', $preferredDate);
-        if ($dateObj !== false) {
-            $preferredDateDb = $dateObj->format('Y-m-d');
+    // Format date
+    $preferreddate_db = null;
+    if (!empty($preferreddate)) {
+        $date_obj = DateTime::createFromFormat('Y-m-d', $preferreddate);
+        if ($date_obj !== false) {
+            $preferreddate_db = $date_obj->format('Y-m-d');
         }
     }
 
-    $submissionDate = date('Y-m-d H:i:s');
+    $send_date = date('Y-m-d H:i:s');
+
+    // Convert academic formation from number to text
+    $education_text = '';
+    switch ($budget) {
+        case '0':
+            $education_text = 'No Education';
+            break;
+        case '1':
+            $education_text = 'Bachelor\'s Degree';
+            break;
+        case '2':
+            $education_text = 'Master\'s Degree/Postgraduate';
+            break;
+        case '3':
+            $education_text = 'Doctorate';
+            break;
+        case '4':
+            $education_text = 'Post-Doctorate';
+            break;
+        case '5':
+            $education_text = 'Professional';
+            break;
+        default:
+            $education_text = 'Not specified';
+    }
+
+    // Format preferred date for display
+    $preferreddate_formatted = 'Not specified';
+    if (!empty($preferreddate_db)) {
+        $date_obj = DateTime::createFromFormat('Y-m-d', $preferreddate_db);
+        if ($date_obj !== false) {
+            $preferreddate_formatted = $date_obj->format('d/m/Y');
+        }
+    }
 
     // Database connection
     $hostname = "sql107.infinityfree.com";
@@ -55,50 +89,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->set_charset("utf8mb4");
 
     // Insert data
-    $stmt = $conn->prepare("
-        INSERT INTO contactos 
-        (nome, email, telefone, website, data_preferida, empresa, categoria, orcamento, assunto, mensagem, data_envio) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ");
-    $stmt->bind_param(
-        "sssssssssss",
-        $name,
-        $email,
-        $phone,
-        $website,
-        $preferredDateDb,
-        $company,
-        $category,
-        $budget,
-        $subject,
-        $message,
-        $submissionDate
-    );
+    $stmt = $conn->prepare("INSERT INTO contactos (nome, email, telefone, website, data_preferida, empresa, categoria, orcamento, assunto, mensagem, data_envio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssss", $name, $email, $phone, $website, $preferreddate_db, $company, $category, $budget, $subject, $message, $send_date);
 
     if ($stmt->execute()) {
 
         // ---------- Send Email ----------
         $to = "nessuino29@gmail.com";
-        $emailSubject = "New form submission on the site";
+        $email_subject = "New form submission on website";
 
         $body = "You have received a new submission:\n\n";
         $body .= "Name: $name\n";
         $body .= "Email: $email\n";
         $body .= "Phone: $phone\n";
         $body .= "Website: $website\n";
-        $body .= "Preferred Date: $preferredDateDb\n";
+        $body .= "Preferred Date: $preferreddate_db\n";
         $body .= "Company: $company\n";
         $body .= "Category: $category\n";
-        $body .= "Budget: $budget\n";
+        $body .= "Education: $education_text\n";
         $body .= "Subject: $subject\n";
         $body .= "Message:\n$message\n\n";
-        $body .= "Submission Date: $submissionDate\n";
+        $body .= "Sent on: $send_date\n";
 
-        $headers = "From: noreply@yourwebsite.com\r\n";
+        $headers = "From: noreply@yoursite.com\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-        // You still need to call mail($to, $emailSubject, $body, $headers);
+        // -----------------------------------
     }
 
     $stmt->close();
@@ -106,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
     // Redirect to contact page if not POST
-    header("Location: index.php?p=contactos");
+    header("Location: index.php?p=contacts");
     exit();
 }
 ?>
@@ -115,14 +132,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Environmental Calculator</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <style>
         html,
@@ -186,8 +203,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="alert alert-danger mb-0">
                                 <h5 class="alert-heading">The following errors were found:</h5>
                                 <ul class="mb-0">
-                                    <?php foreach ($errorMessages as $errMsg): ?>
-                                        <li><?php echo $errMsg; ?></li>
+                                    <?php foreach ($error_messages as $error_msg): ?>
+                                        <li><?php echo $error_msg; ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -203,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card border-custom-green shadow-sm mb-4">
                         <div class="card-header custom-green text-white text-center">
                             <h4 class="mb-0">
-                                <i class="bi bi-check-circle"></i> Message Successfully Received!
+                                <i class="bi bi-check-circle"></i> Message Received Successfully!
                             </h4>
                         </div>
                         <div class="card-body">
@@ -258,7 +275,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-globe"></i> Website
+                                                <i class="bi bi-globe"></i> Website/Portfolio
                                             </h6>
                                             <p class="card-text mb-0 fw-bold"><?php echo $website; ?></p>
                                         </div>
@@ -271,7 +288,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <h6 class="card-title text-custom-green">
                                                 <i class="bi bi-calendar-event"></i> Preferred Contact Date
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $preferredDateFormatted; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $preferreddate_formatted; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -280,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-building"></i> Company/Organization
+                                                <i class="bi bi-building"></i> Company/University
                                             </h6>
                                             <p class="card-text mb-0 fw-bold"><?php echo $company; ?></p>
                                         </div>
@@ -302,9 +319,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-currency-euro"></i> Estimated Budget
+                                                <i class="bi bi-calendar-week"></i> Academic Background
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $budget; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $education_text; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -335,9 +352,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card custom-green text-white">
                                         <div class="card-body">
                                             <h6 class="card-title">
-                                                <i class="bi bi-clock"></i> Submission Date & Time
+                                                <i class="bi bi-clock"></i> Sent Date and Time
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $submissionDate; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $send_date; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -345,17 +362,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <!-- Action Buttons -->
                             <div class="text-center mt-4">
-                                <a href="index-en.php?p=contacts" class="btn btn-outline-custom-green me-2">
+                                <a href="index.php?p=contacts" class="btn btn-outline-custom-green me-2">
                                     <i class="bi bi-arrow-left"></i> Back to Contacts
                                 </a>
-                                <a href="index-en.php" class="btn btn-custom-green">
+                                <a href="index.php" class="btn btn-custom-green">
                                     <i class="bi bi-house"></i> Go to Home
                                 </a>
                             </div>
                         </div>
                     </div>
                 <?php endif; ?>
-
             </div>
         </div>
     </div>

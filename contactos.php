@@ -46,7 +46,7 @@
                         <!-- Website -->
                         <div class="form-group">
                             <label for="website">
-                                <i class="bi bi-globe"></i>Website
+                                <i class="bi bi-globe"></i>Website/Portfólio
                             </label>
                             <input type="url" id="website" name="website" placeholder="https://www.exemplo.com"
                                 autocomplete="url">
@@ -64,25 +64,24 @@
                         <!-- Empresa -->
                         <div class="form-group">
                             <label for="company">
-                                <i class="bi bi-building"></i>Empresa/Organização
+                                <i class="bi bi-building"></i>Empresa/Faculdade
                             </label>
                             <input type="text" id="company" name="company" placeholder="Nome da tua empresa"
                                 list="company-suggestions" autocomplete="organization">
                             <datalist id="company-suggestions">
-                                <option value="Altri">
                                 <option value="APA - Agência Portuguesa do Ambiente">
                                 <option value="Consultor Independente">
-                                <option value="CTT - Correios de Portugal">
-                                <option value="Ecoprogresso">
                                 <option value="EDP Renováveis">
+                                <option value="FCUP">
+                                <option value="FEP">
+                                <option value="FEUP">
+                                <option value="FMUP">
                                 <option value="Galp Energia">
-                                <option value="Greenvolt">
+                                <option value="ICBAS">
                                 <option value="Jerónimo Martins">
                                 <option value="Lipor">
                                 <option value="QUERCUS">
                                 <option value="Sonae">
-                                <option value="The Navigator Company">
-                                <option value="Zero - Associação Sistema Terrestre Sustentável">
                                 <option value="Outro / Freelancer">
                             </datalist>
                         </div>
@@ -95,30 +94,42 @@
                                 <i class="bi bi-tags-fill"></i>Categoria do Contacto *
                             </label>
                             <select id="category" name="category" required>
-                                <option value="" disabled selected>Selecione uma categoria</option>
-                                <option value="auditoria-ambiental">Auditoria Ambiental</option>
-                                <option value="calculo-pegada">Cálculo de Pegada de Carbono</option>
-                                <option value="certificacao-ambiental">Certificação Ambiental</option>
-                                <option value="consultoria-sustentabilidade">Consultoria em Sustentabilidade</option>
-                                <option value="formacao-ambiental">Formação Ambiental</option>
-                                <option value="investimento-sustentavel">Investimento Sustentável</option>
-                                <option value="parceria-projeto">Parceria em Projeto Verde</option>
-                                <option value="relatorio-sustentabilidade">Relatório de Sustentabilidade</option>
-                                <option value="tecnologia-verde">Tecnologia Verde</option>
-
+                                <option value="" disabled selected>Seleciona o tipo de contacto</option>
+                                <option value="duvida-projeto">Dúvida sobre o Projeto</option>
+                                <option value="colaboracao-academica">Colaboração Académica</option>
+                                <option value="partilha-dados">Partilha de Dados/Resultados</option>
+                                <option value="feedback-calculadora">Feedback da Calculadora</option>
+                                <option value="sugestao-melhoria">Sugestão de Melhoria</option>
+                                <option value="pedido-apresentacao">Pedido de Apresentação</option>
+                                <option value="questao-tecnica">Questão Técnica</option>
+                                <option value="oportunidade-estagio">Oportunidade de Estágio</option>
+                                <option value="networking-estudantes">Networking entre Estudantes</option>
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
-                        <!-- Orçamento -->
+                        <!-- Formação -->
                         <div class="form-group">
                             <label for="budget">
-                                <i class="bi bi-currency-euro"></i>Orçamento Estimado
+                                <i class="bi bi-calendar-week"></i> Formação Académica
                             </label>
-                            <input type="range" id="budget" name="budget" min="0" max="10000" value="100" step="50"
-                                oninput="this.nextElementSibling.textContent = this.value + '€'">
-                            <output>0€</output>
-                        </div>
+                            <input type="range" id="budget" name="budget" min="0" max="5" value="5" step="1"
+                                oninput="updateYearDisplay(this.value)">
+                            <output id="year-output">Trabalhador</output>
 
+                            <script>
+                                function updateYearDisplay(value) {
+                                    const years = {
+                                        '0': 'Sem Formação',
+                                        '1': 'Licenciatura',
+                                        '2': 'Mestrado/Pós-Graduação',
+                                        '3': 'Doutoramento',
+                                        '4': 'Pós-Doutoramento',
+                                        '5': 'Trabalhador'
+                                    };
+                                    document.getElementById('year-output').textContent = years[value];
+                                }
+                            </script>
+                        </div>
                     </div>
 
                     <!-- Assunto -->

@@ -42,6 +42,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $data_envio = date('Y-m-d H:i:s');
 
+    // Converter formação académica de número para texto
+    $formacao_texto = '';
+    switch ($budget) {
+        case '0':
+            $formacao_texto = 'Sem Formação';
+            break;
+        case '1':
+            $formacao_texto = 'Licenciatura';
+            break;
+        case '2':
+            $formacao_texto = 'Mestrado/Pós-Graduação';
+            break;
+        case '3':
+            $formacao_texto = 'Doutoramento';
+            break;
+        case '4':
+            $formacao_texto = 'Pós-Doutoramento';
+            break;
+        case '5':
+            $formacao_texto = 'Trabalhador';
+            break;
+        default:
+            $formacao_texto = 'Não especificado';
+    }
+
+    // Formatar data preferida para exibição
+    $preferreddate_formatted = 'Não especificado';
+    if (!empty($preferreddate_db)) {
+        $date_obj = DateTime::createFromFormat('Y-m-d', $preferreddate_db);
+        if ($date_obj !== false) {
+            $preferreddate_formatted = $date_obj->format('d/m/Y');
+        }
+    }
+
     // Conexão à base de dados
     $hostname = "sql107.infinityfree.com";
     $username = "if0_39469160";
@@ -72,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $corpo .= "Data Preferida: $preferreddate_db\n";
         $corpo .= "Empresa: $company\n";
         $corpo .= "Categoria: $category\n";
-        $corpo .= "Orçamento: $budget\n";
+        $corpo .= "Formação: $formacao_texto\n";
         $corpo .= "Assunto: $assunto\n";
         $corpo .= "Mensagem:\n$mensagem\n\n";
         $corpo .= "Data de envio: $data_envio\n";
@@ -106,7 +140,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
 
     <style>
         html,
@@ -242,7 +275,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-globe"></i> Website
+                                                <i class="bi bi-globe"></i> Website/Portfólio
                                             </h6>
                                             <p class="card-text mb-0 fw-bold"><?php echo $website; ?></p>
                                         </div>
@@ -264,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-building"></i> Empresa/Organização
+                                                <i class="bi bi-building"></i> Empresa/Faculdade
                                             </h6>
                                             <p class="card-text mb-0 fw-bold"><?php echo $company; ?></p>
                                         </div>
@@ -286,9 +319,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="card bg-light">
                                         <div class="card-body">
                                             <h6 class="card-title text-custom-green">
-                                                <i class="bi bi-currency-euro"></i> Orçamento Estimado
+                                                <i class="bi bi-calendar-week"></i> Formação Académica
                                             </h6>
-                                            <p class="card-text mb-0 fw-bold"><?php echo $budget; ?></p>
+                                            <p class="card-text mb-0 fw-bold"><?php echo $formacao_texto; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -339,7 +372,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 <?php endif; ?>
-
             </div>
         </div>
     </div>
